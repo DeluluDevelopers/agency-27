@@ -7,7 +7,7 @@ import { Hero3D } from "@/components/hero-3d"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[600px] flex items-center justify-center bg-black pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-black pt-16 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-violet-500/20 rounded-full blur-3xl" />
