@@ -11,7 +11,7 @@ const caseStudies = [
     client: "TechCorp",
     description: "Real-time financial analytics platform with AI-powered insights",
     metrics: [
-      { icon: TrendingUp, label: "Engagement oost", value: "+150%" },
+      { icon: TrendingUp, label: "Engagement Boost", value: "+150%" },
       { icon: Users, label: "Active Users", value: "50K+" },
       { icon: Clock, label: "Development Time", value: "2 weeks" },
     ],
