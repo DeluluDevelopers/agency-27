@@ -46,33 +46,6 @@ export function Hero3D() {
           </motion.div>
         </div>
       </motion.div>
-
-      {/* Floating Elements - Visible on all screens */}
-      <motion.div
-        animate={{
-          y: [0, -10, 0],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-        className='absolute top-2 xs:top-8 right-4 xs:right-16 w-3 xs:w-6 h-3 xs:h-6 bg-blue-500 rounded-full shadow-lg'
-      />
-      <motion.div
-        animate={{
-          y: [0, -8, 0],
-          rotate: [0, -180, -360],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-          delay: 1,
-        }}
-        className='absolute bottom-2 xs:bottom-8 left-4 xs:left-16 w-2 xs:w-4 h-2 xs:h-4 bg-violet-500 rounded-sm shadow-lg'
-      />
     </div>
   );
 }
