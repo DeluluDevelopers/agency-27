@@ -76,11 +76,11 @@ export function Navigation() {
   return (
     <>
       <nav
-        className={`fixed z-[50] transition-all duration-700 ease-out
+        className={`fixed z-[50] transition-all duration-1000 ease-in-out
           ${
             isScrolled
               ? "top-4 left-4 right-4 bg-gray-900/15 backdrop-blur-3xl rounded-2xl shadow-2xl border border-white/15 shadow-blue-500/20"
-              : "top-0 left-0 right-0 w-full"
+              : "top-0 left-0 right-0 w-full border-transparent"
           }
         `}
         style={{
@@ -88,6 +88,7 @@ export function Navigation() {
           background: isScrolled
             ? "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.5) 50%, rgba(51, 65, 85, 0.3) 100%)"
             : "transparent",
+          transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
         <div
