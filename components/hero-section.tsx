@@ -26,7 +26,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className='relative w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex flex-col items-center justify-center h-full lg:grid lg:grid-cols-2 lg:gap-12 py-4'>
+      <div className='relative w-full max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 flex flex-col items-center justify-center h-full lg:grid lg:grid-cols-2 lg:gap-12 py-2'>
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -38,20 +38,20 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className='inline-flex items-center space-x-2 glass rounded-full px-3 py-1.5 mb-4 mt-2 sm:mt-4 text-xs sm:text-sm border border-gray-700/50 backdrop-blur-sm'
+            className='inline-flex items-center space-x-2 glass rounded-full px-2 py-1 mb-3 mt-1 sm:mt-2 text-xs sm:text-sm border border-gray-700/50 backdrop-blur-sm'
           >
             <Sparkles className='w-3 h-3 sm:w-4 sm:h-4 text-blue-400' />
-            <span className='text-sm sm:text-base font-medium text-gray-300'>
+            <span className='text-xs sm:text-sm font-medium text-gray-300'>
               Gen Z App Wizards
             </span>
-            <div className='w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-400 rounded-full animate-pulse' />
+            <div className='w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-400 rounded-full animate-pulse' />
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className='text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight heading-accent mt-1 xs:mt-2'
+            className='text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 leading-tight heading-accent mt-1'
             style={{ wordBreak: "break-word" }}
           >
             Apps for the
@@ -60,7 +60,7 @@ export function HeroSection() {
               Next Generation
             </span>
             <br />
-            <span className='text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl opacity-90'>
+            <span className='text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl opacity-90'>
               Built Fast. Built for You.
             </span>
           </motion.h1>
@@ -69,7 +69,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className='text-sm xs:text-base sm:text-lg md:text-xl text-gray-300 mb-6 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto leading-relaxed'
+            className='text-xs xs:text-sm sm:text-base md:text-lg text-gray-300 mb-4 max-w-xs xs:max-w-sm sm:max-w-xl mx-auto leading-relaxed'
           >
             We build bold, viral, and future-proof apps for Gen Z and the
             digital generation. Want your idea to trend? Let's make it
@@ -80,7 +80,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className='flex flex-col gap-3 w-full sm:flex-row sm:justify-center lg:justify-start'
+            className='flex flex-col gap-2 w-full sm:flex-row sm:justify-center lg:justify-start'
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -89,16 +89,16 @@ export function HeroSection() {
             >
               <Button
                 size='lg'
-                className='w-full sm:w-auto bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-2xl px-4 xs:px-6 py-2 xs:py-3 text-sm xs:text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group neon-blue button-genz border border-blue-500/20'
+                className='w-full sm:w-auto bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group neon-blue button-genz border border-blue-500/20'
               >
-                <Zap className='w-4 h-4 sm:w-5 sm:h-5 mr-2' />
+                <Zap className='w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2' />
                 Let's Build Something Cool
                 <motion.div
-                  className='ml-2'
+                  className='ml-1 sm:ml-2'
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <ArrowRight className='w-4 h-4 sm:w-5 sm:h-5' />
+                  <ArrowRight className='w-3 h-3 sm:w-4 sm:h-4' />
                 </motion.div>
               </Button>
             </motion.div>
@@ -111,9 +111,9 @@ export function HeroSection() {
               <Button
                 variant='outline'
                 size='lg'
-                className='w-full sm:w-auto rounded-2xl px-4 xs:px-6 py-2 xs:py-3 text-sm xs:text-base sm:text-lg font-semibold border-2 border-gray-600 hover:border-blue-400 hover:text-blue-400 transition-all duration-300 bg-transparent text-white button-genz backdrop-blur-sm'
+                className='w-full sm:w-auto rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold border-2 border-gray-600 hover:border-blue-400 hover:text-blue-400 transition-all duration-300 bg-transparent text-white button-genz backdrop-blur-sm'
               >
-                <TrendingUp className='w-4 h-4 sm:w-5 sm:h-5 mr-2' />
+                <TrendingUp className='w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2' />
                 See Gen Z Projects
               </Button>
             </motion.div>
@@ -124,17 +124,17 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className='w-full flex flex-row justify-center items-center gap-6 xs:gap-8 sm:gap-12 mt-6 lg:mt-8 px-2'
+            className='w-full flex flex-row justify-center items-center gap-4 xs:gap-6 sm:gap-8 mt-4 lg:mt-6 px-2'
           >
             <motion.div
               className='text-center group'
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className='text-xl xs:text-2xl sm:text-3xl font-bold text-white group-hover:text-blue-400 transition-colors'>
+              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors'>
                 50+
               </div>
-              <div className='text-xs xs:text-sm text-gray-300 group-hover:text-gray-200 transition-colors'>
+              <div className='text-xs text-gray-300 group-hover:text-gray-200 transition-colors'>
                 Apps Shipped
               </div>
             </motion.div>
@@ -143,10 +143,10 @@ export function HeroSection() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className='text-xl xs:text-2xl sm:text-3xl font-bold text-white group-hover:text-violet-400 transition-colors'>
+              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-violet-400 transition-colors'>
                 2-4
               </div>
-              <div className='text-xs xs:text-sm text-gray-300 group-hover:text-gray-200 transition-colors'>
+              <div className='text-xs text-gray-300 group-hover:text-gray-200 transition-colors'>
                 Week Delivery
               </div>
             </motion.div>
@@ -155,10 +155,10 @@ export function HeroSection() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className='text-xl xs:text-2xl sm:text-3xl font-bold text-white group-hover:text-green-400 transition-colors'>
+              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-green-400 transition-colors'>
                 98%
               </div>
-              <div className='text-xs xs:text-sm text-gray-300 group-hover:text-gray-200 transition-colors'>
+              <div className='text-xs text-gray-300 group-hover:text-gray-200 transition-colors'>
                 Client Satisfaction
               </div>
             </motion.div>
@@ -170,7 +170,7 @@ export function HeroSection() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className='relative w-full h-[200px] xs:h-[320px] sm:h-[400px] md:h-[480px] lg:h-[520px] mt-6 lg:mt-0 flex items-center justify-center hidden sm:block'
+          className='relative w-full h-[200px] xs:h-[320px] sm:h-[400px] md:h-[480px] lg:h-[520px] mt-4 lg:mt-0 flex items-center justify-center hidden sm:block'
         >
           <Hero3D />
         </motion.div>
