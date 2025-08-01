@@ -110,7 +110,7 @@ export function Navigation() {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <div className='hidden md:flex items-center flex-wrap gap-x-6 gap-y-2 min-w-0 overflow-x-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-transparent'>
+            <div className='hidden md:flex items-center flex-wrap gap-x-6 gap-y-2 min-w-0'>
               {navItems.map((item) => (
                 <a
                   key={item.name}
