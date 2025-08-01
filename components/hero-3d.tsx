@@ -122,40 +122,270 @@ export function Hero3D() {
                   >
                     {/* Screen content */}
                     <div
-                      className={`w-full h-full bg-gradient-to-br ${config.gradient} ${config.borderRadius} flex flex-col items-center justify-center text-white font-bold relative overflow-hidden`}
+                      className={`w-full h-full bg-gray-900 ${config.borderRadius} flex flex-col overflow-hidden`}
                     >
-                      {/* Animated background pattern */}
-                      <div className='absolute inset-0 opacity-20'>
-                        <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent' />
-                        <div className='absolute bottom-0 right-0 w-20 h-20 bg-white/5 rounded-full blur-xl' />
-                      </div>
+                      {/* Device-specific content */}
+                      {device === "laptop" && (
+                        <div className='w-full h-full bg-gray-900 rounded-lg flex flex-col overflow-hidden'>
+                          {/* Browser Header */}
+                          <div className='flex items-center justify-between p-2 bg-gray-800 rounded-t-lg border-b border-gray-700'>
+                            <div className='flex items-center space-x-1'>
+                              <div className='w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors'></div>
+                              <div className='w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors'></div>
+                              <div className='w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors'></div>
+                            </div>
+                            <div className='text-xs text-gray-400 font-medium flex items-center'>
+                              <div className='w-2 h-2 bg-blue-500 rounded-full mr-1'></div>
+                              Dashboard
+                            </div>
+                            <div className='w-4 h-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded flex items-center justify-center'>
+                              <div className='text-xs text-white'>⚡</div>
+                            </div>
+                          </div>
 
-                      {/* Device icon */}
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{
-                          delay: 0.1,
-                          type: "spring",
-                          stiffness: 200,
-                        }}
-                        className='text-4xl mb-2'
-                      >
-                        {config.icon}
-                      </motion.div>
+                          {/* Dashboard Content */}
+                          <div className='flex-1 p-2 space-y-2 bg-gray-900'>
+                            {/* Top Stats */}
+                            <div className='flex space-x-2'>
+                              <div className='flex-1 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-2 border border-blue-500/20 shadow-lg'>
+                                <div className='text-xs text-blue-200 font-bold mb-1 flex items-center'>
+                                  📊 Analytics
+                                </div>
+                                <div className='text-sm text-white font-semibold'>
+                                  +23%
+                                </div>
+                                <div className='text-xs text-blue-300 mt-1'>
+                                  ↗️ +12% vs last week
+                                </div>
+                              </div>
+                              <div className='flex-1 bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-2 border border-green-500/20 shadow-lg'>
+                                <div className='text-xs text-green-200 font-bold mb-1 flex items-center'>
+                                  👥 Users
+                                </div>
+                                <div className='text-sm text-white font-semibold'>
+                                  1.2K
+                                </div>
+                                <div className='text-xs text-green-300 mt-1'>
+                                  ↗️ +8% vs last week
+                                </div>
+                              </div>
+                            </div>
 
-                      {/* Device text */}
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className='text-center'
-                      >
-                        <div className='text-sm font-semibold'>
-                          {config.text}
+                            {/* Chart */}
+                            <div className='bg-gray-800 rounded-lg p-2 border border-gray-700 shadow-inner'>
+                              <div className='flex items-center justify-between mb-2'>
+                                <div className='text-xs text-gray-300 font-medium flex items-center'>
+                                  📈 Revenue
+                                </div>
+                                <div className='text-xs text-green-400 font-bold flex items-center'>
+                                  💰 $12.5K
+                                </div>
+                              </div>
+                              <div className='flex space-x-1 h-8 items-end'>
+                                {[4, 6, 3, 8, 5, 7, 9].map((height, i) => (
+                                  <div
+                                    key={i}
+                                    className='flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t-sm shadow-sm hover:from-blue-400 hover:to-blue-300 transition-all duration-200'
+                                    style={{ height: `${height * 2}px` }}
+                                  ></div>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Bottom Stats */}
+                            <div className='flex space-x-2'>
+                              <div className='flex-1 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg p-2 border border-purple-500/20 shadow-lg'>
+                                <div className='text-xs text-purple-200 font-bold mb-1 flex items-center'>
+                                  🤖 AI Chat
+                                </div>
+                                <div className='text-xs text-purple-300 flex items-center'>
+                                  <div className='w-2 h-2 bg-green-400 rounded-full mr-1 animate-pulse'></div>
+                                  Active
+                                </div>
+                              </div>
+                              <div className='flex-1 bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg p-2 border border-orange-500/20 shadow-lg'>
+                                <div className='text-xs text-orange-200 font-bold mb-1 flex items-center'>
+                                  🔌 API
+                                </div>
+                                <div className='text-xs text-orange-300 flex items-center'>
+                                  <div className='w-2 h-2 bg-green-400 rounded-full mr-1'></div>
+                                  99.9%
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className='text-xs opacity-80 mt-1'>Next Gen</div>
-                      </motion.div>
+                      )}
+
+                      {device === "tablet" && (
+                        <div className='w-full h-full bg-gray-900 rounded-xl flex flex-col overflow-hidden'>
+                          {/* Status Bar */}
+                          <div className='flex items-center justify-between p-2 bg-gray-800 rounded-t-xl border-b border-gray-700'>
+                            <div className='text-xs text-gray-300 font-medium flex items-center'>
+                              🕐 9:41
+                            </div>
+                            <div className='flex items-center space-x-1'>
+                              <div className='w-4 h-1 bg-gray-600 rounded-full'></div>
+                              <div className='w-4 h-1 bg-gray-600 rounded-full'></div>
+                              <div className='w-4 h-1 bg-gray-600 rounded-full'></div>
+                            </div>
+                            <div className='text-xs text-gray-300 flex items-center'>
+                              🔋 100%
+                            </div>
+                          </div>
+
+                          {/* Social App Content */}
+                          <div className='flex-1 p-2 space-y-2 bg-gray-900'>
+                            {/* Header */}
+                            <div className='flex items-center justify-between'>
+                              <div className='text-sm font-bold text-white flex items-center'>
+                                📱 Social App
+                              </div>
+                              <div className='w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg'>
+                                <div className='text-xs text-white'>👤</div>
+                              </div>
+                            </div>
+
+                            {/* Stories */}
+                            <div className='flex space-x-2'>
+                              {[1, 2, 3].map((i) => (
+                                <div
+                                  key={i}
+                                  className='w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center border-2 border-white shadow-lg hover:scale-105 transition-transform'
+                                >
+                                  <div className='text-xs text-white'>📸</div>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Post */}
+                            <div className='bg-gray-800 rounded-lg p-2 border border-gray-700 shadow-inner'>
+                              <div className='flex items-center space-x-2 mb-2'>
+                                <div className='w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-sm'></div>
+                                <div className='text-xs text-gray-300 font-medium'>
+                                  User123
+                                </div>
+                                <div className='text-xs text-gray-500'>
+                                  • 2h ago
+                                </div>
+                              </div>
+                              <div className='text-xs text-gray-300 mb-2 leading-relaxed'>
+                                Amazing app experience! 🚀 The new features are
+                                incredible!
+                              </div>
+                              <div className='bg-gray-700 rounded-lg h-12 flex items-center justify-center border border-gray-600'>
+                                <div className='text-sm text-gray-400'>📷</div>
+                              </div>
+                            </div>
+
+                            {/* Actions */}
+                            <div className='flex items-center justify-between'>
+                              <div className='flex space-x-3'>
+                                <div className='text-sm text-red-500 cursor-pointer hover:scale-110 transition-transform hover:text-red-400'>
+                                  ❤️
+                                </div>
+                                <div className='text-sm text-gray-400 cursor-pointer hover:scale-110 transition-transform hover:text-gray-300'>
+                                  💬
+                                </div>
+                                <div className='text-sm text-gray-400 cursor-pointer hover:scale-110 transition-transform hover:text-gray-300'>
+                                  📤
+                                </div>
+                              </div>
+                              <div className='text-xs text-gray-400 flex items-center'>
+                                💬 24 comments
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {device === "phone" && (
+                        <div className='w-full h-full bg-gray-900 rounded-2xl flex flex-col overflow-hidden'>
+                          {/* Status Bar */}
+                          <div className='flex items-center justify-between p-1 bg-gray-800 rounded-t-2xl border-b border-gray-700'>
+                            <div className='text-xs text-gray-300 font-medium flex items-center'>
+                              🕐 9:41
+                            </div>
+                            <div className='flex items-center space-x-1'>
+                              <div className='w-3 h-1 bg-gray-600 rounded-full'></div>
+                              <div className='w-3 h-1 bg-gray-600 rounded-full'></div>
+                              <div className='w-3 h-1 bg-gray-600 rounded-full'></div>
+                            </div>
+                            <div className='text-xs text-gray-300 flex items-center'>
+                              🔋 100%
+                            </div>
+                          </div>
+
+                          {/* Fintech App Content */}
+                          <div className='flex-1 p-2 space-y-2 bg-gray-900'>
+                            {/* Header */}
+                            <div className='flex items-center justify-between'>
+                              <div className='text-xs font-bold text-white flex items-center'>
+                                💰 Fintech
+                              </div>
+                              <div className='w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg'>
+                                <div className='text-xs text-white'>💰</div>
+                              </div>
+                            </div>
+
+                            {/* Balance */}
+                            <div className='bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-2 border border-green-500/20 shadow-lg'>
+                              <div className='text-xs text-green-200 mb-1 flex items-center'>
+                                💳 Balance
+                              </div>
+                              <div className='text-sm font-bold text-white'>
+                                $2,450.00
+                              </div>
+                              <div className='text-xs text-green-300 mt-1'>
+                                ↗️ +$150 this week
+                              </div>
+                            </div>
+
+                            {/* Quick Actions */}
+                            <div className='grid grid-cols-2 gap-1'>
+                              <div className='bg-gray-800 rounded-lg p-1 text-center hover:bg-gray-700 transition-colors border border-gray-700 shadow-sm'>
+                                <div className='text-xs text-blue-400 mb-1'>
+                                  📤
+                                </div>
+                                <div className='text-xs text-gray-300'>
+                                  Send
+                                </div>
+                              </div>
+                              <div className='bg-gray-800 rounded-lg p-1 text-center hover:bg-gray-700 transition-colors border border-gray-700 shadow-sm'>
+                                <div className='text-xs text-green-400 mb-1'>
+                                  📥
+                                </div>
+                                <div className='text-xs text-gray-300'>
+                                  Receive
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Recent Transaction */}
+                            <div className='bg-gray-800 rounded-lg p-2 border border-gray-700 shadow-inner'>
+                              <div className='flex items-center justify-between'>
+                                <div className='flex items-center space-x-1'>
+                                  <div className='w-4 h-4 bg-red-500 rounded-full shadow-sm'></div>
+                                  <div className='text-xs text-gray-300'>
+                                    Netflix
+                                  </div>
+                                </div>
+                                <div className='text-xs text-red-400 font-medium flex items-center'>
+                                  💸 -$15.99
+                                </div>
+                              </div>
+                              <div className='text-xs text-gray-500 mt-1'>
+                                Today at 2:30 PM
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Home Indicator */}
+                          <div className='flex justify-center p-1'>
+                            <div className='w-8 h-1 bg-gray-600 rounded-full'></div>
+                          </div>
+                        </div>
+                      )}
                     </div>
 
                     {/* Device details */}
