@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -99,14 +100,15 @@ export function Navigation() {
           <div className='flex justify-between items-center h-16'>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className='flex items-center space-x-2'
+              className='flex items-center'
             >
-              <div className='w-8 h-8 bg-gradient-to-r from-blue-500 to-violet-600 rounded-lg flex items-center justify-center neon-blue shadow-lg'>
-                <span className='text-white font-bold text-sm'>A</span>
-              </div>
-              <span className='text-xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent'>
-                AgileApps
-              </span>
+              <Image
+                src='/logo.png'
+                alt='Logo'
+                width={120}
+                height={120}
+                className='object-contain w-[80px] h-[80px] md:w-[120px] md:h-[120px]'
+              />
             </motion.div>
 
             {/* Desktop Navigation */}
