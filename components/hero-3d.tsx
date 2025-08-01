@@ -88,9 +88,9 @@ export function Hero3D() {
                   key={device}
                   initial={{
                     opacity: 0,
-                    scale: 0.8,
-                    rotateY: 45,
-                    y: 50,
+                    scale: 0.7,
+                    rotateY: 30,
+                    y: 30,
                     x: 0,
                   }}
                   animate={{
@@ -102,16 +102,17 @@ export function Hero3D() {
                   }}
                   exit={{
                     opacity: 0,
-                    scale: 0.8,
-                    rotateY: -45,
-                    y: -50,
+                    scale: 0.7,
+                    rotateY: -30,
+                    y: -30,
                     x: 0,
                   }}
                   transition={{
-                    duration: 0.8,
+                    duration: 0.6,
                     ease: "easeInOut",
                     type: "spring",
-                    stiffness: 100,
+                    stiffness: 120,
+                    damping: 15,
                   }}
                   className={`relative ${config.zIndex} mx-auto`}
                 >
@@ -133,7 +134,11 @@ export function Hero3D() {
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ delay: 0.2, type: "spring" }}
+                        transition={{
+                          delay: 0.1,
+                          type: "spring",
+                          stiffness: 200,
+                        }}
                         className='text-4xl mb-2'
                       >
                         {config.icon}
@@ -143,7 +148,7 @@ export function Hero3D() {
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ delay: 0.2 }}
                         className='text-center'
                       >
                         <div className='text-sm font-semibold'>
@@ -164,7 +169,7 @@ export function Hero3D() {
                         <motion.div
                           initial={{ opacity: 0, x: 60, y: -40 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
-                          transition={{ delay: 0.5 }}
+                          transition={{ delay: 0.3 }}
                           className='absolute -top-4 -right-4 z-30'
                         >
                           <div className='w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-xs font-bold shadow-lg'>
@@ -175,7 +180,7 @@ export function Hero3D() {
                         <motion.div
                           initial={{ opacity: 0, x: -60, y: 40 }}
                           animate={{ opacity: 1, x: 0, y: 0 }}
-                          transition={{ delay: 0.7 }}
+                          transition={{ delay: 0.4 }}
                           className='absolute -bottom-4 -left-4 z-30'
                         >
                           <div className='w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-xs font-bold shadow-lg'>
