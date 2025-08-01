@@ -392,33 +392,6 @@ export function Hero3D() {
                     {device === "laptop" && (
                       <div className='absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-600 rounded-full' />
                     )}
-
-                    {/* Floating elements for laptop */}
-                    {device === "laptop" && (
-                      <>
-                        <motion.div
-                          initial={{ opacity: 0, x: 60, y: -40 }}
-                          animate={{ opacity: 1, x: 0, y: 0 }}
-                          transition={{ delay: 0.3 }}
-                          className='absolute -top-4 -right-4 z-30'
-                        >
-                          <div className='w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white text-xs font-bold shadow-lg'>
-                            AI Chat
-                          </div>
-                        </motion.div>
-
-                        <motion.div
-                          initial={{ opacity: 0, x: -60, y: 40 }}
-                          animate={{ opacity: 1, x: 0, y: 0 }}
-                          transition={{ delay: 0.4 }}
-                          className='absolute -bottom-4 -left-4 z-30'
-                        >
-                          <div className='w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-xs font-bold shadow-lg'>
-                            Analytics
-                          </div>
-                        </motion.div>
-                      </>
-                    )}
                   </div>
                 </motion.div>
               );
