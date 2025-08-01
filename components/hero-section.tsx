@@ -114,7 +114,7 @@ export function HeroSection() {
                 className='w-full sm:w-auto rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold border-2 border-gray-600 hover:border-blue-400 hover:text-blue-400 transition-all duration-300 bg-transparent text-white button-genz backdrop-blur-sm'
               >
                 <TrendingUp className='w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2' />
-                See Gen Z Project
+                See Gen Z Projects
               </Button>
             </motion.div>
           </motion.div>

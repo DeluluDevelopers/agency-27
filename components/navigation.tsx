@@ -59,7 +59,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -76,22 +76,31 @@ export function Navigation() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[50] w-full transition-all duration-500
+        className={`fixed z-[50] transition-all duration-700 ease-out
           ${
             isScrolled
-              ? "bg-gray-900/70 backdrop-blur-xl rounded-b-2xl shadow-xl border-b border-white/10"
-              : "bg-transparent border-b border-transparent"
+              ? "top-4 left-4 right-4 bg-gray-900/15 backdrop-blur-3xl rounded-2xl shadow-2xl border border-white/15 shadow-blue-500/20"
+              : "top-0 left-0 right-0 w-full"
           }
         `}
-        style={{ pointerEvents: "auto" }}
+        style={{
+          pointerEvents: "auto",
+          background: isScrolled
+            ? "linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.5) 50%, rgba(51, 65, 85, 0.3) 100%)"
+            : "transparent",
+        }}
       >
-        <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div
+          className={`mx-auto px-4 sm:px-6 lg:px-8 ${
+            isScrolled ? "max-w-6xl" : "w-full max-w-7xl"
+          }`}
+        >
           <div className='flex justify-between items-center h-16'>
             <motion.div
               whileHover={{ scale: 1.05 }}
               className='flex items-center space-x-2'
             >
-              <div className='w-8 h-8 bg-gradient-to-r from-blue-500 to-violet-600 rounded-lg flex items-center justify-center neon-blue'>
+              <div className='w-8 h-8 bg-gradient-to-r from-blue-500 to-violet-600 rounded-lg flex items-center justify-center neon-blue shadow-lg'>
                 <span className='text-white font-bold text-sm'>A</span>
               </div>
               <span className='text-xl font-bold bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent'>
@@ -105,7 +114,7 @@ export function Navigation() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className='text-gray-300 hover:text-blue-400 transition-colors font-medium relative group px-2 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 whitespace-nowrap'
+                  className='text-gray-300 hover:text-blue-400 transition-colors font-medium relative group px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 whitespace-nowrap hover:bg-white/5'
                   style={{ transition: "all 0.25s cubic-bezier(0.4,0,0.2,1)" }}
                   onClick={
                     item.name === "Contact"
@@ -133,7 +142,7 @@ export function Navigation() {
                 variant='ghost'
                 size='sm'
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className='text-white hover:text-blue-400 hover:bg-gray-800/50 p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400'
+                className='text-white hover:text-blue-400 hover:bg-white/10 p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400'
                 style={{ minWidth: 44, minHeight: 44 }}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-haspopup='true'
