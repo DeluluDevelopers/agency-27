@@ -10,6 +10,7 @@ import {
   CheckCircle,
   Code,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
@@ -132,6 +133,25 @@ export function ServicesSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* See More Services Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className='text-center mt-12'
+        >
+          <Button
+            size='lg'
+            variant='outline'
+            className='border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 group'
+            onClick={() => (window.location.href = "/services")}
+          >
+            See More Services
+            <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' />
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

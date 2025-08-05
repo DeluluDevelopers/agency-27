@@ -123,6 +123,7 @@ export function FinalCTASection() {
               <Button
                 size='lg'
                 className='bg-white text-blue-600 hover:bg-gray-100 rounded-2xl px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group button-genz'
+                onClick={() => (window.location.href = "/contact")}
               >
                 Let’s Make Your App Trend
                 <motion.div
@@ -140,6 +141,12 @@ export function FinalCTASection() {
                 variant='outline'
                 size='lg'
                 className='border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-2xl px-8 py-4 text-lg font-semibold transition-all duration-300 group bg-transparent button-genz'
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/deluluissoluluagency/",
+                    "_blank"
+                  )
+                }
               >
                 <MessageCircle className='w-5 h-5 mr-2' />
                 DM Us for a Collab

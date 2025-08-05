@@ -10,13 +10,70 @@ import {
   Clock,
   Users,
   TrendingUp,
+  Globe,
+  Smartphone,
+  BookOpen,
+  Palette,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Navigation } from "@/components/navigation";
+
+const projects = [
+  {
+    title: "WeddingTroop",
+    description:
+      "A comprehensive wedding planning platform that helps couples organize their special day with vendor management, timeline tracking, and budget planning features.",
+    liveUrl: "https://weddingtroop.in/",
+    githubUrl: "https://github.com/DeluluDevelopers/landingdiversity",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    icon: "💒",
+    color: "from-pink-500 to-rose-600",
+    gradient: "from-pink-500/20 to-rose-600/20",
+    category: "Web Platform",
+  },
+  {
+    title: "SkillShift Landing Page",
+    description:
+      "A modern landing page for skill development platform featuring interactive animations, responsive design, and seamless user experience for educational content.",
+    liveUrl: "https://skill-shift-landing.vercel.app/",
+    githubUrl: "https://github.com/SafalBhandari12/skillShift_landing",
+    tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
+    icon: "🎯",
+    color: "from-blue-500 to-cyan-600",
+    gradient: "from-blue-500/20 to-cyan-600/20",
+    category: "Landing Page",
+  },
+  {
+    title: "English Learning Platform",
+    description:
+      "An interactive English learning application with personalized lessons, progress tracking, and AI-powered language assessment tools for students.",
+    liveUrl: "https://english-learning-client.vercel.app/",
+    githubUrl: "https://github.com/SafalBhandari12/englishLearningServer",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    icon: "📚",
+    color: "from-green-500 to-emerald-600",
+    gradient: "from-green-500/20 to-emerald-600/20",
+    category: "Educational App",
+  },
+  {
+    title: "LandingDiversity",
+    description:
+      "A showcase of diverse landing page designs and templates, demonstrating modern web development techniques and creative UI/UX solutions.",
+    liveUrl: "https://landingdiversity.vercel.app/",
+    githubUrl: "https://github.com/DeluluDevelopers/landingdiversity",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    icon: "🎨",
+    color: "from-violet-500 to-purple-600",
+    gradient: "from-violet-500/20 to-purple-600/20",
+    category: "Landing Page",
+  },
+];
 
 export default function PortfolioPage() {
   return (
     <main className='min-h-screen bg-black overflow-hidden'>
+      <Navigation />
       {/* Background Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-full blur-3xl animate-pulse' />
@@ -79,104 +136,108 @@ export default function PortfolioPage() {
           </p>
         </motion.div>
 
-        {/* Coming Soon Section */}
+        {/* Projects Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className='text-center py-20'
+          className='mb-20'
         >
-          <div className='max-w-2xl mx-auto'>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className='w-32 h-32 bg-gradient-to-br from-blue-500/20 to-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-blue-500/30 backdrop-blur-sm'
-            >
-              <Clock className='w-16 h-16 text-blue-400' />
-            </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className='text-3xl font-bold text-white text-center mb-12'
+          >
+            Featured Projects
+          </motion.h2>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className='text-3xl font-bold text-white mb-4'
-            >
-              Coming Soon
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className='text-lg text-gray-300 mb-8 leading-relaxed'
-            >
-              Our portfolio of Gen Z projects is being carefully crafted. We're
-              working on some amazing apps that will redefine what's possible
-              for the next generation.
-            </motion.p>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-12'
-            >
-              <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50'>
-                <div className='flex items-center justify-center mb-3'>
-                  <TrendingUp className='w-8 h-8 text-blue-400' />
-                </div>
-                <h3 className='text-2xl font-bold text-white mb-1'>10+</h3>
-                <p className='text-gray-300 text-sm'>Projects in Development</p>
-              </div>
-
-              <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50'>
-                <div className='flex items-center justify-center mb-3'>
-                  <Users className='w-8 h-8 text-violet-400' />
-                </div>
-                <h3 className='text-2xl font-bold text-white mb-1'>50K+</h3>
-                <p className='text-gray-300 text-sm'>Target Users</p>
-              </div>
-
-              <div className='bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50'>
-                <div className='flex items-center justify-center mb-3'>
-                  <Sparkles className='w-8 h-8 text-purple-400' />
-                </div>
-                <h3 className='text-2xl font-bold text-white mb-1'>100%</h3>
-                <p className='text-gray-300 text-sm'>Gen Z Focused</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className='flex flex-col sm:flex-row gap-4 justify-center'
-            >
-              <a
-                href='https://github.com/DeluluDevelopers'
-                target='_blank'
-                rel='noopener noreferrer'
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                className='group relative'
               >
-                <Button
-                  variant='outline'
-                  size='lg'
-                  className='border-2 border-gray-600 text-gray-300 hover:border-blue-500 hover:text-blue-400 rounded-2xl px-8 py-4 text-lg font-semibold transition-all duration-300 bg-transparent'
-                >
-                  <Github className='w-5 h-5 mr-2' />
-                  View on GitHub
-                </Button>
-              </a>
-              <Link href='/'>
-                <Button
-                  size='lg'
-                  className='bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-2xl px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300'
-                >
-                  Back to Home
-                </Button>
-              </Link>
-            </motion.div>
+                <div className='relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 group-hover:scale-105 overflow-hidden h-full'>
+                  {/* Background Gradient */}
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                  />
+
+                  <div className='relative z-10'>
+                    <div className='flex items-center justify-between mb-6'>
+                      <div
+                        className={`w-16 h-16 bg-gradient-to-r ${project.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      >
+                        <span className='text-3xl'>{project.icon}</span>
+                      </div>
+                      <div className='text-right'>
+                        <span className='text-xs text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full'>
+                          {project.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <h3
+                      className={`text-2xl font-bold text-white mb-3 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
+                    >
+                      {project.title}
+                    </h3>
+                    <p className='text-gray-300 leading-relaxed mb-6'>
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className='flex flex-wrap gap-2 mb-6'>
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className='text-xs bg-gray-700/50 text-gray-300 px-2 py-1 rounded-md'
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className='flex gap-3'>
+                      <a
+                        href={project.liveUrl}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex-1'
+                      >
+                        <Button
+                          size='sm'
+                          className='w-full bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-xl transition-all duration-300'
+                        >
+                          <Globe className='w-4 h-4 mr-2' />
+                          Live Demo
+                        </Button>
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex-1'
+                      >
+                        <Button
+                          variant='outline'
+                          size='sm'
+                          className='w-full border-gray-600 text-gray-300 hover:border-blue-500 hover:text-blue-400 rounded-xl transition-all duration-300 bg-transparent'
+                        >
+                          <Github className='w-4 h-4 mr-2' />
+                          Code
+                        </Button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
@@ -199,25 +260,43 @@ export default function PortfolioPage() {
           <div className='grid md:grid-cols-3 gap-8'>
             {[
               {
-                title: "Social Apps",
-                description: "Viral social platforms that Gen Z loves to share",
+                title: "Mobile Apps",
+                description:
+                  "Native and cross-platform mobile solutions that Gen Z can't put down. We build apps that users love to use and can't stop using.",
                 icon: "📱",
                 color: "from-violet-500 to-purple-600",
                 gradient: "from-violet-500/20 to-purple-600/20",
+                features: [
+                  "Cross-Platform",
+                  "Native Performance",
+                  "App Store Ready",
+                ],
               },
               {
-                title: "AI Tools",
-                description: "Next-gen AI applications that feel magical",
-                icon: "🤖",
+                title: "Web Sites",
+                description:
+                  "Modern, responsive websites that load fast and look stunning on every device. We create web experiences that convert visitors into customers.",
+                icon: "🌐",
                 color: "from-blue-500 to-cyan-600",
                 gradient: "from-blue-500/20 to-cyan-600/20",
+                features: [
+                  "Responsive Design",
+                  "SEO Optimized",
+                  "Performance Focused",
+                ],
               },
               {
-                title: "E-commerce",
-                description: "Modern shopping experiences for digital natives",
-                icon: "🛒",
+                title: "Custom Software",
+                description:
+                  "Tailored solutions that solve your unique business challenges and scale with you. We build software that grows with your business.",
+                icon: "⚙️",
                 color: "from-green-500 to-emerald-600",
                 gradient: "from-green-500/20 to-emerald-600/20",
+                features: [
+                  "Scalable Architecture",
+                  "Cloud Native",
+                  "Enterprise Ready",
+                ],
               },
             ].map((category, index) => (
               <motion.div
@@ -244,9 +323,24 @@ export default function PortfolioPage() {
                     >
                       {category.title}
                     </h3>
-                    <p className='text-gray-300 leading-relaxed'>
+                    <p className='text-gray-300 leading-relaxed mb-6'>
                       {category.description}
                     </p>
+
+                    {/* Features */}
+                    <div className='space-y-2'>
+                      {category.features.map((feature, featureIndex) => (
+                        <div
+                          key={feature}
+                          className='flex items-center space-x-2'
+                        >
+                          <div className='w-1.5 h-1.5 bg-blue-400 rounded-full'></div>
+                          <span className='text-sm text-gray-300'>
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>

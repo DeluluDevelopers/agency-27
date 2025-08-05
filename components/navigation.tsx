@@ -67,11 +67,9 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { name: "Services", href: "#services" },
-    { name: "Process", href: "#process" },
-    { name: "Tech Stack", href: "#tech" },
-    { name: "Case Studies", href: "#cases" },
-    { name: "Contact", href: "#final-cta" }, // Contact now scrolls to FinalCTASection
+    { name: "Services", href: "/services" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -100,7 +98,8 @@ export function Navigation() {
           <div className='flex justify-between items-center h-16'>
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className='flex items-center'
+              className='flex items-center cursor-pointer'
+              onClick={() => (window.location.href = "/")}
             >
               <Image
                 src='/logo.png'
@@ -123,12 +122,17 @@ export function Navigation() {
                     item.name === "Contact"
                       ? (e) => {
                           e.preventDefault();
-                          const el = document.querySelector(item.href);
-                          if (el)
-                            el.scrollIntoView({
-                              behavior: "smooth",
-                              block: "start",
-                            });
+                          window.location.href = "/contact";
+                        }
+                      : item.name === "Portfolio"
+                      ? (e) => {
+                          e.preventDefault();
+                          window.location.href = "/portfolio";
+                        }
+                      : item.name === "Services"
+                      ? (e) => {
+                          e.preventDefault();
+                          window.location.href = "/services";
                         }
                       : undefined
                   }
@@ -200,12 +204,13 @@ export function Navigation() {
                     setIsMobileMenuOpen(false);
                     if (item.name === "Contact") {
                       e.preventDefault();
-                      const el = document.querySelector(item.href);
-                      if (el)
-                        el.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
+                      window.location.href = "/contact";
+                    } else if (item.name === "Portfolio") {
+                      e.preventDefault();
+                      window.location.href = "/portfolio";
+                    } else if (item.name === "Services") {
+                      e.preventDefault();
+                      window.location.href = "/services";
                     }
                   }}
                   tabIndex={0}
