@@ -88,9 +88,7 @@ export function FinalCTASection() {
             className='inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-8 border border-white/20'
           >
             <Sparkles className='w-5 h-5 text-white' />
-            <span className='text-white font-medium'>
-              Ready to Go Viral?
-            </span>
+            <span className='text-white font-medium'>Ready to Go Viral?</span>
           </motion.div>
 
           <motion.h2
@@ -110,7 +108,8 @@ export function FinalCTASection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className='text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed'
           >
-            We help Gen Z brands, creators, and startups launch apps that trend. Want to stand out? Let’s collab and make your vision a reality.
+            We help Gen Z brands, creators, and startups launch apps that trend.
+            Want to stand out? Let’s collab and make your vision a reality.
           </motion.p>
 
           <motion.div
@@ -158,7 +157,12 @@ export function FinalCTASection() {
           >
             <div className='flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-white/80'>
               <div className='flex items-center space-x-2'>
-                <a href="mailto:hello@agileapps.dev" className="font-medium hover:text-white transition-colors">📧 hello@agileapps.dev</a>
+                <a
+                  href='mailto:deluluissoluluagency@gmail.com'
+                  className='font-medium hover:text-white transition-colors'
+                >
+                  📧 deluluissoluluagency@gmail.com
+                </a>
               </div>
               <div className='flex items-center space-x-2'>
                 <span className='font-medium'>📱 +1 (555) 123-4567</span>

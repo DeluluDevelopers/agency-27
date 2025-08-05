@@ -90,6 +90,26 @@ export function HeroSection() {
               <Button
                 size='lg'
                 className='w-full sm:w-auto bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group neon-blue button-genz border border-blue-500/20'
+                onClick={() => {
+                  const subject = encodeURIComponent(
+                    "Let's Build Something Cool - Project Inquiry"
+                  );
+                  const body = encodeURIComponent(`Hi there!
+
+I'm interested in building something cool with your team. Here are some details about my project:
+
+Project Type: [Web App / Mobile App / AI Tool / Other]
+Budget Range: [Your budget range]
+Timeline: [Your timeline]
+Description: [Brief description of your idea]
+
+Looking forward to hearing from you!
+
+Best regards,
+[Your name]`);
+
+                  window.location.href = `mailto:hello@agency27.com?subject=${subject}&body=${body}`;
+                }}
               >
                 <Zap className='w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2' />
                 Let's Build Something Cool
@@ -112,6 +132,9 @@ export function HeroSection() {
                 variant='outline'
                 size='lg'
                 className='w-full sm:w-auto rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold border-2 border-gray-600 hover:border-blue-400 hover:text-blue-400 transition-all duration-300 bg-transparent text-white button-genz backdrop-blur-sm'
+                onClick={() => {
+                  window.location.href = "/portfolio";
+                }}
               >
                 <TrendingUp className='w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2' />
                 See Gen Z Projects
