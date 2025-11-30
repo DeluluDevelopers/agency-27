@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -28,16 +28,16 @@ export function FinalCTASection() {
   return (
     <section
       id='final-cta'
-      className='relative py-20 bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 overflow-hidden'
+      className='relative py-20 bg-gradient-to-r from-white/10 via-gray-500/10 to-gray-600/10 overflow-hidden'
     >
       {/* Background Elements */}
       <div className='absolute inset-0'>
-        <div className='absolute top-0 left-0 w-full h-full bg-black/20' />
+        <div className='absolute top-0 left-0 w-full h-full bg-black/60' />
         <div className='absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl' />
         <div className='absolute -bottom-40 -left-40 w-80 h-80 bg-white/10 rounded-full blur-3xl' />
       </div>
 
-      {/* Confetti Animation */}
+      {/* Confetti Animation - Monochrome */}
       {showConfetti && (
         <div className='absolute inset-0 pointer-events-none'>
           {[...Array(50)].map((_, i) => (
@@ -98,7 +98,7 @@ export function FinalCTASection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className='text-4xl md:text-6xl font-bold text-white mb-6 leading-tight heading-accent'
           >
-            Let’s Build the Next Big Thing for Gen Z
+            Let's Build the Next Big Thing for Gen Z
           </motion.h2>
 
           <motion.p
@@ -109,7 +109,7 @@ export function FinalCTASection() {
             className='text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed'
           >
             We help Gen Z brands, creators, and startups launch apps that trend.
-            Want to stand out? Let’s collab and make your vision a reality.
+            Want to stand out? Let's collab and make your vision a reality.
           </motion.p>
 
           <motion.div
@@ -122,10 +122,10 @@ export function FinalCTASection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size='lg'
-                className='bg-white text-blue-600 hover:bg-gray-100 rounded-2xl px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group button-genz'
+                className='bg-white text-black hover:bg-gray-200 rounded-2xl px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 group button-genz'
                 onClick={() => (window.location.href = "/contact")}
               >
-                Let’s Make Your App Trend
+                Let's Make Your App Trend
                 <motion.div
                   className='ml-2'
                   whileHover={{ x: 5 }}
@@ -140,10 +140,10 @@ export function FinalCTASection() {
               <Button
                 variant='outline'
                 size='lg'
-                className='border-2 border-white text-white hover:bg-white hover:text-blue-600 rounded-2xl px-8 py-4 text-lg font-semibold transition-all duration-300 group bg-transparent button-genz'
+                className='border-2 border-white text-white hover:bg-white hover:text-black rounded-2xl px-8 py-4 text-lg font-semibold transition-all duration-300 group bg-transparent button-genz'
                 onClick={() =>
                   window.open(
-                    "https://www.instagram.com/deluluissoluluagency/",
+                    "https://www.instagram.com/agilegenessence/",
                     "_blank"
                   )
                 }
@@ -165,17 +165,18 @@ export function FinalCTASection() {
             <div className='flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-white/80'>
               <div className='flex items-center space-x-2'>
                 <a
-                  href='mailto:deluluissoluluagency@gmail.com'
+                  href='mailto:anujrawat9639@gmail.com'
                   className='font-medium hover:text-white transition-colors'
                 >
-                  📧 deluluissoluluagency@gmail.com
+                  anujrawat9639@gmail.com
                 </a>
               </div>
               <div className='flex items-center space-x-2'>
-                <span className='font-medium'>📱 +1 (555) 123-4567</span>
+                <span className='font-medium'>+91 8126133363</span>
               </div>
               <div className='flex items-center space-x-2'>
-                <span className='font-medium'>⚡ 2-4 Week Delivery</span>
+                <Zap className='w-4 h-4' />
+                <span className='font-medium'>2-4 Week Delivery</span>
               </div>
             </div>
           </motion.div>

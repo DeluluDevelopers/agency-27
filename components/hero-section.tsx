@@ -1,25 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, TrendingUp } from "lucide-react";
+import { ArrowRight, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Hero3D } from "@/components/hero-3d";
 
 export function HeroSection() {
   return (
     <section className='relative h-screen flex items-center justify-center bg-black pt-16 overflow-hidden'>
-      {/* Enhanced Background Elements */}
+      {/* Enhanced Background Elements - Monochrome */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-full blur-3xl animate-pulse' />
-        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-violet-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse' />
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-blue-500/15 to-violet-500/15 rounded-full blur-3xl' />
+        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-white/10 to-gray-500/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-gray-500/10 to-white/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-white/5 to-gray-400/5 rounded-full blur-3xl' />
 
         {/* Animated grid pattern */}
-        <div className='absolute inset-0 opacity-20'>
+        <div className='absolute inset-0 opacity-10'>
           <div
             className='absolute inset-0'
             style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
               backgroundSize: "50px 50px",
             }}
           />
@@ -40,11 +40,11 @@ export function HeroSection() {
             transition={{ delay: 0.2 }}
             className='inline-flex items-center space-x-2 glass rounded-full px-2 py-1 mb-3 mt-1 sm:mt-2 text-xs sm:text-sm border border-gray-700/50 backdrop-blur-sm'
           >
-            <Sparkles className='w-3 h-3 sm:w-4 sm:h-4 text-blue-400' />
+            <Sparkles className='w-3 h-3 sm:w-4 sm:h-4 text-white' />
             <span className='text-xs sm:text-sm font-medium text-gray-300'>
               Gen Z App Wizards
             </span>
-            <div className='w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-400 rounded-full animate-pulse' />
+            <div className='w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full animate-pulse' />
           </motion.div>
 
           <motion.h1
@@ -56,7 +56,7 @@ export function HeroSection() {
           >
             Apps for the
             <br />
-            <span className='bg-gradient-to-r from-blue-400 via-violet-400 to-purple-400 bg-clip-text text-transparent animate-gradient'>
+            <span className='bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent animate-gradient'>
               Next Generation
             </span>
             <br />
@@ -89,7 +89,7 @@ export function HeroSection() {
             >
               <Button
                 size='lg'
-                className='w-full sm:w-auto bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group neon-blue button-genz border border-blue-500/20'
+                className='w-full sm:w-auto bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black rounded-2xl px-3 xs:px-4 py-1.5 xs:py-2 text-xs xs:text-sm sm:text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group border border-white/20'
                 onClick={() => {
                   const subject = encodeURIComponent(
                     "Let's Build Something Cool - Project Inquiry"
@@ -136,10 +136,10 @@ Best regards,
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors'>
+              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-gray-300 transition-colors'>
                 50+
               </div>
-              <div className='text-xs text-gray-300 group-hover:text-gray-200 transition-colors'>
+              <div className='text-xs text-gray-400 group-hover:text-gray-300 transition-colors'>
                 Apps Shipped
               </div>
             </motion.div>
@@ -148,10 +148,10 @@ Best regards,
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-violet-400 transition-colors'>
+              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-gray-300 transition-colors'>
                 2-4
               </div>
-              <div className='text-xs text-gray-300 group-hover:text-gray-200 transition-colors'>
+              <div className='text-xs text-gray-400 group-hover:text-gray-300 transition-colors'>
                 Week Delivery
               </div>
             </motion.div>
@@ -160,10 +160,10 @@ Best regards,
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-green-400 transition-colors'>
+              <div className='text-lg xs:text-xl sm:text-2xl font-bold text-white group-hover:text-gray-300 transition-colors'>
                 98%
               </div>
-              <div className='text-xs text-gray-300 group-hover:text-gray-200 transition-colors'>
+              <div className='text-xs text-gray-400 group-hover:text-gray-300 transition-colors'>
                 Client Satisfaction
               </div>
             </motion.div>

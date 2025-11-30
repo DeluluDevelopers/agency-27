@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Monitor, Tablet, Smartphone, TrendingUp, Users, Activity, DollarSign, CreditCard, Zap } from "lucide-react";
 
 export function Hero3D() {
   const [currentDevice, setCurrentDevice] = useState(0);
@@ -22,9 +23,9 @@ export function Hero3D() {
       padding: "p-4",
       borderRadius: "rounded-2xl",
       shadow: "shadow-2xl",
-      gradient: "from-blue-500 to-violet-600",
+      gradient: "from-white to-gray-300",
       text: "Web Dashboard",
-      icon: "💻",
+      icon: Monitor,
       zIndex: "z-20",
       scale: 1,
       rotateY: 0,
@@ -37,9 +38,9 @@ export function Hero3D() {
       padding: "p-3",
       borderRadius: "rounded-3xl",
       shadow: "shadow-xl",
-      gradient: "from-violet-500 to-purple-600",
+      gradient: "from-gray-200 to-gray-400",
       text: "Tablet App",
-      icon: "📱",
+      icon: Tablet,
       zIndex: "z-30",
       scale: 0.9,
       rotateY: 15,
@@ -52,9 +53,9 @@ export function Hero3D() {
       padding: "p-2",
       borderRadius: "rounded-3xl",
       shadow: "shadow-lg",
-      gradient: "from-indigo-500 to-blue-600",
+      gradient: "from-gray-300 to-gray-500",
       text: "Mobile App",
-      icon: "📱",
+      icon: Smartphone,
       zIndex: "z-40",
       scale: 0.8,
       rotateY: -15,
@@ -67,7 +68,7 @@ export function Hero3D() {
     <div className='relative w-full h-full flex items-center justify-center min-h-[180px] xs:min-h-[240px] sm:min-h-[320px] md:min-h-[400px] lg:min-h-[480px] hidden sm:block'>
       {/* Background glow effects */}
       <div className='absolute inset-0 flex items-center justify-center'>
-        <div className='w-96 h-96 bg-gradient-to-r from-blue-500/20 to-violet-500/20 rounded-full blur-3xl animate-pulse' />
+        <div className='w-96 h-96 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-full blur-3xl animate-pulse' />
       </div>
 
       {/* Device showcase */}
@@ -130,16 +131,16 @@ export function Hero3D() {
                           {/* Browser Header */}
                           <div className='flex items-center justify-between p-2 bg-gray-800 rounded-t-lg border-b border-gray-700'>
                             <div className='flex items-center space-x-1'>
-                              <div className='w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors'></div>
-                              <div className='w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors'></div>
-                              <div className='w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors'></div>
+                              <div className='w-3 h-3 bg-gray-600 rounded-full hover:bg-gray-500 transition-colors'></div>
+                              <div className='w-3 h-3 bg-gray-600 rounded-full hover:bg-gray-500 transition-colors'></div>
+                              <div className='w-3 h-3 bg-gray-600 rounded-full hover:bg-gray-500 transition-colors'></div>
                             </div>
                             <div className='text-xs text-gray-400 font-medium flex items-center'>
-                              <div className='w-2 h-2 bg-blue-500 rounded-full mr-1'></div>
+                              <div className='w-2 h-2 bg-white rounded-full mr-1'></div>
                               Dashboard
                             </div>
-                            <div className='w-4 h-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded flex items-center justify-center'>
-                              <div className='text-xs text-white'>⚡</div>
+                            <div className='w-4 h-4 bg-gradient-to-br from-white to-gray-300 rounded flex items-center justify-center'>
+                              <Zap className='w-2 h-2 text-black' />
                             </div>
                           </div>
 
@@ -147,26 +148,26 @@ export function Hero3D() {
                           <div className='flex-1 p-2 space-y-2 bg-gray-900'>
                             {/* Top Stats */}
                             <div className='flex space-x-2'>
-                              <div className='flex-1 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-2 border border-blue-500/20 shadow-lg'>
-                                <div className='text-xs text-blue-200 font-bold mb-1 flex items-center'>
-                                  📊 Analytics
+                              <div className='flex-1 bg-gradient-to-br from-white/20 to-gray-300/20 rounded-lg p-2 border border-white/10 shadow-lg'>
+                                <div className='text-xs text-gray-300 font-bold mb-1 flex items-center'>
+                                  <TrendingUp className='w-3 h-3 mr-1' /> Analytics
                                 </div>
                                 <div className='text-sm text-white font-semibold'>
                                   +23%
                                 </div>
-                                <div className='text-xs text-blue-300 mt-1'>
-                                  ↗️ +12% vs last week
+                                <div className='text-xs text-gray-400 mt-1'>
+                                  +12% vs last week
                                 </div>
                               </div>
-                              <div className='flex-1 bg-gradient-to-br from-green-600 to-green-700 rounded-lg p-2 border border-green-500/20 shadow-lg'>
-                                <div className='text-xs text-green-200 font-bold mb-1 flex items-center'>
-                                  👥 Users
+                              <div className='flex-1 bg-gradient-to-br from-gray-200/20 to-gray-400/20 rounded-lg p-2 border border-white/10 shadow-lg'>
+                                <div className='text-xs text-gray-300 font-bold mb-1 flex items-center'>
+                                  <Users className='w-3 h-3 mr-1' /> Users
                                 </div>
                                 <div className='text-sm text-white font-semibold'>
                                   1.2K
                                 </div>
-                                <div className='text-xs text-green-300 mt-1'>
-                                  ↗️ +8% vs last week
+                                <div className='text-xs text-gray-400 mt-1'>
+                                  +8% vs last week
                                 </div>
                               </div>
                             </div>
@@ -175,17 +176,17 @@ export function Hero3D() {
                             <div className='bg-gray-800 rounded-lg p-2 border border-gray-700 shadow-inner'>
                               <div className='flex items-center justify-between mb-2'>
                                 <div className='text-xs text-gray-300 font-medium flex items-center'>
-                                  📈 Revenue
+                                  <Activity className='w-3 h-3 mr-1' /> Revenue
                                 </div>
-                                <div className='text-xs text-green-400 font-bold flex items-center'>
-                                  💰 $12.5K
+                                <div className='text-xs text-white font-bold flex items-center'>
+                                  <DollarSign className='w-3 h-3 mr-1' /> $12.5K
                                 </div>
                               </div>
                               <div className='flex space-x-1 h-8 items-end'>
                                 {[4, 6, 3, 8, 5, 7, 9].map((height, i) => (
                                   <div
                                     key={i}
-                                    className='flex-1 bg-gradient-to-t from-blue-500 to-blue-400 rounded-t-sm shadow-sm hover:from-blue-400 hover:to-blue-300 transition-all duration-200'
+                                    className='flex-1 bg-gradient-to-t from-white to-gray-300 rounded-t-sm shadow-sm hover:from-gray-200 hover:to-gray-400 transition-all duration-200'
                                     style={{ height: `${height * 2}px` }}
                                   ></div>
                                 ))}
@@ -194,21 +195,21 @@ export function Hero3D() {
 
                             {/* Bottom Stats */}
                             <div className='flex space-x-2'>
-                              <div className='flex-1 bg-gradient-to-br from-purple-600 to-purple-700 rounded-lg p-2 border border-purple-500/20 shadow-lg'>
-                                <div className='text-xs text-purple-200 font-bold mb-1 flex items-center'>
-                                  🤖 AI Chat
+                              <div className='flex-1 bg-gradient-to-br from-gray-300/20 to-gray-500/20 rounded-lg p-2 border border-white/10 shadow-lg'>
+                                <div className='text-xs text-gray-300 font-bold mb-1 flex items-center'>
+                                  <Zap className='w-3 h-3 mr-1' /> AI Chat
                                 </div>
-                                <div className='text-xs text-purple-300 flex items-center'>
-                                  <div className='w-2 h-2 bg-green-400 rounded-full mr-1 animate-pulse'></div>
+                                <div className='text-xs text-gray-400 flex items-center'>
+                                  <div className='w-2 h-2 bg-white rounded-full mr-1 animate-pulse'></div>
                                   Active
                                 </div>
                               </div>
-                              <div className='flex-1 bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg p-2 border border-orange-500/20 shadow-lg'>
-                                <div className='text-xs text-orange-200 font-bold mb-1 flex items-center'>
-                                  🔌 API
+                              <div className='flex-1 bg-gradient-to-br from-gray-400/20 to-gray-600/20 rounded-lg p-2 border border-white/10 shadow-lg'>
+                                <div className='text-xs text-gray-300 font-bold mb-1 flex items-center'>
+                                  <Activity className='w-3 h-3 mr-1' /> API
                                 </div>
-                                <div className='text-xs text-orange-300 flex items-center'>
-                                  <div className='w-2 h-2 bg-green-400 rounded-full mr-1'></div>
+                                <div className='text-xs text-gray-400 flex items-center'>
+                                  <div className='w-2 h-2 bg-white rounded-full mr-1'></div>
                                   99.9%
                                 </div>
                               </div>
@@ -221,17 +222,15 @@ export function Hero3D() {
                         <div className='w-full h-full bg-gray-900 rounded-xl flex flex-col overflow-hidden'>
                           {/* Status Bar */}
                           <div className='flex items-center justify-between p-2 bg-gray-800 rounded-t-xl border-b border-gray-700'>
-                            <div className='text-xs text-gray-300 font-medium flex items-center'>
-                              🕐 9:41
+                            <div className='text-xs text-gray-300 font-medium'>
+                              9:41
                             </div>
                             <div className='flex items-center space-x-1'>
                               <div className='w-4 h-1 bg-gray-600 rounded-full'></div>
                               <div className='w-4 h-1 bg-gray-600 rounded-full'></div>
                               <div className='w-4 h-1 bg-gray-600 rounded-full'></div>
                             </div>
-                            <div className='text-xs text-gray-300 flex items-center'>
-                              🔋 100%
-                            </div>
+                            <div className='text-xs text-gray-300'>100%</div>
                           </div>
 
                           {/* Social App Content */}
@@ -239,10 +238,10 @@ export function Hero3D() {
                             {/* Header */}
                             <div className='flex items-center justify-between'>
                               <div className='text-sm font-bold text-white flex items-center'>
-                                📱 Social App
+                                <Tablet className='w-4 h-4 mr-1' /> Social App
                               </div>
-                              <div className='w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg'>
-                                <div className='text-xs text-white'>👤</div>
+                              <div className='w-6 h-6 bg-gradient-to-br from-white to-gray-300 rounded-full flex items-center justify-center shadow-lg'>
+                                <Users className='w-3 h-3 text-black' />
                               </div>
                             </div>
 
@@ -251,9 +250,9 @@ export function Hero3D() {
                               {[1, 2, 3].map((i) => (
                                 <div
                                   key={i}
-                                  className='w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center border-2 border-white shadow-lg hover:scale-105 transition-transform'
+                                  className='w-8 h-8 bg-gradient-to-br from-white to-gray-400 rounded-full flex items-center justify-center border-2 border-white shadow-lg hover:scale-105 transition-transform'
                                 >
-                                  <div className='text-xs text-white'>📸</div>
+                                  <Users className='w-4 h-4 text-black' />
                                 </div>
                               ))}
                             </div>
@@ -261,7 +260,7 @@ export function Hero3D() {
                             {/* Post */}
                             <div className='bg-gray-800 rounded-lg p-2 border border-gray-700 shadow-inner'>
                               <div className='flex items-center space-x-2 mb-2'>
-                                <div className='w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-sm'></div>
+                                <div className='w-5 h-5 bg-gradient-to-br from-white to-gray-300 rounded-full shadow-sm'></div>
                                 <div className='text-xs text-gray-300 font-medium'>
                                   User123
                                 </div>
@@ -270,29 +269,11 @@ export function Hero3D() {
                                 </div>
                               </div>
                               <div className='text-xs text-gray-300 mb-2 leading-relaxed'>
-                                Amazing app experience! 🚀 The new features are
+                                Amazing app experience! The new features are
                                 incredible!
                               </div>
                               <div className='bg-gray-700 rounded-lg h-12 flex items-center justify-center border border-gray-600'>
-                                <div className='text-sm text-gray-400'>📷</div>
-                              </div>
-                            </div>
-
-                            {/* Actions */}
-                            <div className='flex items-center justify-between'>
-                              <div className='flex space-x-3'>
-                                <div className='text-sm text-red-500 cursor-pointer hover:scale-110 transition-transform hover:text-red-400'>
-                                  ❤️
-                                </div>
-                                <div className='text-sm text-gray-400 cursor-pointer hover:scale-110 transition-transform hover:text-gray-300'>
-                                  💬
-                                </div>
-                                <div className='text-sm text-gray-400 cursor-pointer hover:scale-110 transition-transform hover:text-gray-300'>
-                                  📤
-                                </div>
-                              </div>
-                              <div className='text-xs text-gray-400 flex items-center'>
-                                💬 24 comments
+                                <Activity className='w-6 h-6 text-gray-400' />
                               </div>
                             </div>
                           </div>
@@ -303,17 +284,15 @@ export function Hero3D() {
                         <div className='w-full h-full bg-gray-900 rounded-2xl flex flex-col overflow-hidden'>
                           {/* Status Bar */}
                           <div className='flex items-center justify-between p-1 bg-gray-800 rounded-t-2xl border-b border-gray-700'>
-                            <div className='text-xs text-gray-300 font-medium flex items-center'>
-                              🕐 9:41
+                            <div className='text-xs text-gray-300 font-medium'>
+                              9:41
                             </div>
                             <div className='flex items-center space-x-1'>
                               <div className='w-3 h-1 bg-gray-600 rounded-full'></div>
                               <div className='w-3 h-1 bg-gray-600 rounded-full'></div>
                               <div className='w-3 h-1 bg-gray-600 rounded-full'></div>
                             </div>
-                            <div className='text-xs text-gray-300 flex items-center'>
-                              🔋 100%
-                            </div>
+                            <div className='text-xs text-gray-300'>100%</div>
                           </div>
 
                           {/* Fintech App Content */}
@@ -321,40 +300,36 @@ export function Hero3D() {
                             {/* Header */}
                             <div className='flex items-center justify-between'>
                               <div className='text-xs font-bold text-white flex items-center'>
-                                💰 Fintech
+                                <DollarSign className='w-4 h-4 mr-1' /> Fintech
                               </div>
-                              <div className='w-5 h-5 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg'>
-                                <div className='text-xs text-white'>💰</div>
+                              <div className='w-5 h-5 bg-gradient-to-br from-white to-gray-300 rounded-full flex items-center justify-center shadow-lg'>
+                                <CreditCard className='w-3 h-3 text-black' />
                               </div>
                             </div>
 
                             {/* Balance */}
-                            <div className='bg-gradient-to-r from-green-600 to-blue-600 rounded-lg p-2 border border-green-500/20 shadow-lg'>
-                              <div className='text-xs text-green-200 mb-1 flex items-center'>
-                                💳 Balance
+                            <div className='bg-gradient-to-r from-white/20 to-gray-400/20 rounded-lg p-2 border border-white/10 shadow-lg'>
+                              <div className='text-xs text-gray-300 mb-1 flex items-center'>
+                                <CreditCard className='w-3 h-3 mr-1' /> Balance
                               </div>
                               <div className='text-sm font-bold text-white'>
                                 $2,450.00
                               </div>
-                              <div className='text-xs text-green-300 mt-1'>
-                                ↗️ +$150 this week
+                              <div className='text-xs text-gray-400 mt-1'>
+                                <TrendingUp className='w-3 h-3 inline mr-1' /> +$150 this week
                               </div>
                             </div>
 
                             {/* Quick Actions */}
                             <div className='grid grid-cols-2 gap-1'>
                               <div className='bg-gray-800 rounded-lg p-1 text-center hover:bg-gray-700 transition-colors border border-gray-700 shadow-sm'>
-                                <div className='text-xs text-blue-400 mb-1'>
-                                  📤
-                                </div>
+                                <TrendingUp className='w-3 h-3 text-white mx-auto mb-1' />
                                 <div className='text-xs text-gray-300'>
                                   Send
                                 </div>
                               </div>
                               <div className='bg-gray-800 rounded-lg p-1 text-center hover:bg-gray-700 transition-colors border border-gray-700 shadow-sm'>
-                                <div className='text-xs text-green-400 mb-1'>
-                                  📥
-                                </div>
+                                <Activity className='w-3 h-3 text-white mx-auto mb-1' />
                                 <div className='text-xs text-gray-300'>
                                   Receive
                                 </div>
@@ -365,13 +340,13 @@ export function Hero3D() {
                             <div className='bg-gray-800 rounded-lg p-2 border border-gray-700 shadow-inner'>
                               <div className='flex items-center justify-between'>
                                 <div className='flex items-center space-x-1'>
-                                  <div className='w-4 h-4 bg-red-500 rounded-full shadow-sm'></div>
+                                  <div className='w-4 h-4 bg-gray-600 rounded-full shadow-sm'></div>
                                   <div className='text-xs text-gray-300'>
                                     Netflix
                                   </div>
                                 </div>
-                                <div className='text-xs text-red-400 font-medium flex items-center'>
-                                  💸 -$15.99
+                                <div className='text-xs text-gray-400 font-medium flex items-center'>
+                                  <DollarSign className='w-3 h-3' /> -15.99
                                 </div>
                               </div>
                               <div className='text-xs text-gray-500 mt-1'>
@@ -418,7 +393,7 @@ export function Hero3D() {
               delay: i * 0.5,
               ease: "easeInOut",
             }}
-            className='absolute w-2 h-2 bg-blue-400 rounded-full blur-sm'
+            className='absolute w-2 h-2 bg-white rounded-full blur-sm'
             style={{
               left: `${20 + i * 15}%`,
               top: `${30 + i * 10}%`,

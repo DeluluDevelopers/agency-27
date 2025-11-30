@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import {
   Smartphone,
   Globe,
-  Brain,
-  Settings,
+  Code,
   ArrowRight,
   CheckCircle,
-  Code,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -18,8 +16,8 @@ const services = [
     title: "Mobile Apps",
     description:
       "Native and cross-platform mobile solutions that Gen Z can't put down",
-    color: "from-violet-500 to-purple-600",
-    gradient: "from-violet-500/20 to-purple-600/20",
+    color: "from-white to-gray-300",
+    gradient: "from-white/10 to-gray-500/10",
     features: ["Cross-Platform", "Native Performance", "App Store Ready"],
   },
   {
@@ -27,8 +25,8 @@ const services = [
     title: "Web Sites",
     description:
       "Modern, responsive websites that load fast and look stunning on every device",
-    color: "from-blue-500 to-cyan-600",
-    gradient: "from-blue-500/20 to-cyan-600/20",
+    color: "from-gray-200 to-gray-400",
+    gradient: "from-gray-200/10 to-gray-400/10",
     features: ["Responsive Design", "SEO Optimized", "Performance Focused"],
   },
   {
@@ -36,15 +34,15 @@ const services = [
     title: "Custom Software",
     description:
       "Tailored solutions that solve your unique business challenges and scale with you",
-    color: "from-green-500 to-emerald-600",
-    gradient: "from-green-500/20 to-emerald-600/20",
+    color: "from-gray-300 to-gray-500",
+    gradient: "from-gray-300/10 to-gray-500/10",
     features: ["Scalable Architecture", "Cloud Native", "Enterprise Ready"],
   },
 ];
 
 export function ServicesSection() {
   return (
-    <section id='services' className='py-16 xs:py-20 bg-gray-900'>
+    <section id='services' className='py-16 xs:py-20 bg-[#0a0a0a]'>
       <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -73,7 +71,7 @@ export function ServicesSection() {
               whileHover={{ y: -8, scale: 1.02 }}
               className='group relative'
             >
-              <div className='relative bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 h-full overflow-hidden'>
+              <div className='relative bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800/50 hover:border-gray-600/50 transition-all duration-300 h-full overflow-hidden'>
                 {/* Background Gradient */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
@@ -85,7 +83,7 @@ export function ServicesSection() {
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <service.icon className='w-8 h-8 text-white' />
+                  <service.icon className='w-8 h-8 text-black' />
                   <div className='absolute -top-1 -right-1 w-4 h-4 bg-white/20 rounded-full' />
                 </motion.div>
 
@@ -109,7 +107,7 @@ export function ServicesSection() {
                         transition={{ delay: index * 0.2 + featureIndex * 0.1 }}
                         className='flex items-center space-x-3'
                       >
-                        <CheckCircle className='w-5 h-5 text-green-400 flex-shrink-0' />
+                        <CheckCircle className='w-5 h-5 text-white flex-shrink-0' />
                         <span className='text-gray-300 font-medium'>
                           {feature}
                         </span>
@@ -120,7 +118,7 @@ export function ServicesSection() {
                   {/* Learn More Button */}
                   <motion.button
                     whileHover={{ x: 5 }}
-                    className='flex items-center space-x-2 text-blue-400 hover:text-blue-300 transition-colors group-hover:text-blue-300 font-medium'
+                    className='flex items-center space-x-2 text-white hover:text-gray-300 transition-colors group-hover:text-gray-200 font-medium'
                   >
                     <span>Learn More</span>
                     <ArrowRight className='w-4 h-4' />
@@ -128,7 +126,7 @@ export function ServicesSection() {
                 </div>
 
                 {/* Hover Glow Effect */}
-                <div className='absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
+                <div className='absolute inset-0 rounded-2xl bg-gradient-to-r from-white/5 to-gray-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
               </div>
             </motion.div>
           ))}
@@ -145,7 +143,7 @@ export function ServicesSection() {
           <Button
             size='lg'
             variant='outline'
-            className='border-2 border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 group'
+            className='border-2 border-white text-white hover:bg-white hover:text-black rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300 group'
             onClick={() => (window.location.href = "/services")}
           >
             See More Services

@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Deluluissolulu - Build Your Next App with AI-Powered Precision",
+  title: "Agile Gen Essence",
   description:
     "Spring Boot & MERN wizards. From concept to launch in weeks. We ship fast, we ship smart.",
   generator: "v0.dev",

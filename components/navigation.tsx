@@ -102,7 +102,7 @@ export function Navigation() {
               onClick={() => (window.location.href = "/")}
             >
               <Image
-                src='/logo.png'
+                src='/AGE Logo (1).png'
                 alt='Logo'
                 width={120}
                 height={120}

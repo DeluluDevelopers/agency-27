@@ -36,14 +36,12 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Create mailto link with form data
-      const mailtoLink = `mailto:deluluissoluluagency@gmail.com?subject=${encodeURIComponent(
+      const mailtoLink = `mailto:anujrawat9639@gmail.com?subject=${encodeURIComponent(
         formData.subject
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`;
 
-      // Open default email client
       window.location.href = mailtoLink;
       setSubmitStatus("success");
     } catch (error) {
@@ -67,18 +65,18 @@ export default function ContactPage() {
     <main className='min-h-screen bg-black overflow-hidden'>
       <Navigation />
 
-      {/* Background Elements */}
+      {/* Background Elements - Monochrome */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-full blur-3xl animate-pulse' />
-        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-violet-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse' />
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-blue-500/15 to-violet-500/15 rounded-full blur-3xl' />
+        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-white/10 to-gray-500/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-gray-500/10 to-white/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-white/5 to-gray-400/5 rounded-full blur-3xl' />
 
         {/* Animated grid pattern */}
-        <div className='absolute inset-0 opacity-20'>
+        <div className='absolute inset-0 opacity-10'>
           <div
             className='absolute inset-0'
             style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
               backgroundSize: "50px 50px",
             }}
           />
@@ -97,7 +95,7 @@ export default function ContactPage() {
             <Link href='/'>
               <Button
                 variant='ghost'
-                className='mr-4 text-gray-300 hover:text-blue-400 transition-colors'
+                className='mr-4 text-gray-300 hover:text-white transition-colors'
               >
                 <ArrowLeft className='w-4 h-4 mr-2' />
                 Back to Home
@@ -111,13 +109,13 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className='inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-6 border border-gray-700/50 backdrop-blur-sm'
           >
-            <Sparkles className='w-5 h-5 text-blue-400' />
+            <Sparkles className='w-5 h-5 text-white' />
             <span className='text-sm font-medium text-gray-300'>Contact</span>
           </motion.div>
 
           <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight'>
             Let's{" "}
-            <span className='bg-gradient-to-r from-blue-400 via-violet-400 to-purple-400 bg-clip-text text-transparent animate-gradient'>
+            <span className='bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent animate-gradient'>
               Build
             </span>{" "}
             Something Cool
@@ -141,8 +139,8 @@ export default function ContactPage() {
             </h2>
 
             {submitStatus === "success" && (
-              <div className='mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg'>
-                <p className='text-green-400 text-sm'>
+              <div className='mb-6 p-4 bg-white/10 border border-white/20 rounded-lg'>
+                <p className='text-white text-sm'>
                   Email client opened! Please send the message to complete your
                   inquiry.
                 </p>
@@ -150,8 +148,8 @@ export default function ContactPage() {
             )}
 
             {submitStatus === "error" && (
-              <div className='mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg'>
-                <p className='text-red-400 text-sm'>
+              <div className='mb-6 p-4 bg-gray-700/20 border border-gray-600/20 rounded-lg'>
+                <p className='text-gray-300 text-sm'>
                   Something went wrong. Please try again or contact us directly.
                 </p>
               </div>
@@ -169,7 +167,7 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder='Your name'
-                    className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500'
+                    className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-white focus:ring-white'
                     required
                   />
                 </div>
@@ -183,7 +181,7 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder='your@email.com'
-                    className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500'
+                    className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-white focus:ring-white'
                     required
                   />
                 </div>
@@ -199,7 +197,7 @@ export default function ContactPage() {
                   value={formData.subject}
                   onChange={handleInputChange}
                   placeholder='What can we help you with?'
-                  className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500'
+                  className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-white focus:ring-white'
                   required
                 />
               </div>
@@ -214,7 +212,7 @@ export default function ContactPage() {
                   onChange={handleInputChange}
                   placeholder='Tell us about your project...'
                   rows={6}
-                  className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500 resize-none'
+                  className='bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-white focus:ring-white resize-none'
                   required
                 />
               </div>
@@ -222,7 +220,7 @@ export default function ContactPage() {
               <Button
                 type='submit'
                 disabled={isSubmitting}
-                className='w-full bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-xl py-3 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
+                className='w-full bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black rounded-xl py-3 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
               >
                 <Send className='w-5 h-5 mr-2' />
                 {isSubmitting ? "Opening Email..." : "Send Message"}
@@ -245,40 +243,40 @@ export default function ContactPage() {
 
               <div className='space-y-4'>
                 <div className='flex items-center space-x-4'>
-                  <div className='w-12 h-12 bg-gradient-to-r from-blue-500 to-violet-600 rounded-xl flex items-center justify-center'>
-                    <Mail className='w-6 h-6 text-white' />
+                  <div className='w-12 h-12 bg-gradient-to-r from-white to-gray-300 rounded-xl flex items-center justify-center'>
+                    <Mail className='w-6 h-6 text-black' />
                   </div>
                   <div>
                     <p className='text-gray-300 text-sm'>Email</p>
                     <a
-                      href='mailto:deluluissoluluagency@gmail.com'
-                      className='text-white font-medium hover:text-blue-400 transition-colors'
+                      href='mailto:anujrawat9639@gmail.com'
+                      className='text-white font-medium hover:text-gray-300 transition-colors'
                     >
-                      deluluissoluluagency@gmail.com
+                      anujrawat9639@gmail.com
                     </a>
                   </div>
                 </div>
 
                 <div className='flex items-center space-x-4'>
-                  <div className='w-12 h-12 bg-gradient-to-r from-violet-500 to-purple-600 rounded-xl flex items-center justify-center'>
-                    <Instagram className='w-6 h-6 text-white' />
+                  <div className='w-12 h-12 bg-gradient-to-r from-gray-200 to-gray-400 rounded-xl flex items-center justify-center'>
+                    <Instagram className='w-6 h-6 text-black' />
                   </div>
                   <div>
                     <p className='text-gray-300 text-sm'>Instagram</p>
                     <a
-                      href='https://www.instagram.com/deluluissoluluagency/'
+                      href='https://www.instagram.com/agilegenessence/'
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-white font-medium hover:text-violet-400 transition-colors'
+                      className='text-white font-medium hover:text-gray-300 transition-colors'
                     >
-                      @deluluissoluluagency
+                      @agilegenessence
                     </a>
                   </div>
                 </div>
 
                 <div className='flex items-center space-x-4'>
-                  <div className='w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center'>
-                    <Clock className='w-6 h-6 text-white' />
+                  <div className='w-12 h-12 bg-gradient-to-r from-gray-300 to-gray-500 rounded-xl flex items-center justify-center'>
+                    <Clock className='w-6 h-6 text-black' />
                   </div>
                   <div>
                     <p className='text-gray-300 text-sm'>Response Time</p>
@@ -296,33 +294,33 @@ export default function ContactPage() {
 
               <div className='space-y-4'>
                 <a
-                  href='https://www.instagram.com/deluluissoluluagency/'
+                  href='https://www.instagram.com/agilegenessence/'
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center justify-between p-4 bg-gradient-to-r from-violet-500/20 to-purple-600/20 rounded-xl border border-violet-500/30 hover:border-violet-400/50 transition-all duration-300 group'
+                  className='flex items-center justify-between p-4 bg-gradient-to-r from-white/10 to-gray-500/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 group'
                 >
                   <div className='flex items-center space-x-3'>
-                    <Instagram className='w-5 h-5 text-violet-400' />
+                    <Instagram className='w-5 h-5 text-white' />
                     <span className='text-white font-medium'>
                       DM us on Instagram
                     </span>
                   </div>
-                  <div className='text-violet-400 group-hover:translate-x-1 transition-transform'>
+                  <div className='text-white group-hover:translate-x-1 transition-transform'>
                     →
                   </div>
                 </a>
 
                 <a
-                  href='mailto:deluluissoluluagency@gmail.com'
-                  className='flex items-center justify-between p-4 bg-gradient-to-r from-blue-500/20 to-cyan-600/20 rounded-xl border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group'
+                  href='mailto:anujrawat9639@gmail.com'
+                  className='flex items-center justify-between p-4 bg-gradient-to-r from-gray-200/10 to-gray-400/10 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-300 group'
                 >
                   <div className='flex items-center space-x-3'>
-                    <Mail className='w-5 h-5 text-blue-400' />
+                    <Mail className='w-5 h-5 text-white' />
                     <span className='text-white font-medium'>
                       Send us an email
                     </span>
                   </div>
-                  <div className='text-blue-400 group-hover:translate-x-1 transition-transform'>
+                  <div className='text-white group-hover:translate-x-1 transition-transform'>
                     →
                   </div>
                 </a>

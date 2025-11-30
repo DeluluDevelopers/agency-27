@@ -14,6 +14,9 @@ import {
   Smartphone,
   BookOpen,
   Palette,
+  Monitor,
+  Code,
+  Settings,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -27,9 +30,9 @@ const projects = [
     liveUrl: "https://weddingtroop.in/",
     githubUrl: "https://github.com/DeluluDevelopers/landingdiversity",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    icon: "💒",
-    color: "from-pink-500 to-rose-600",
-    gradient: "from-pink-500/20 to-rose-600/20",
+    icon: Monitor,
+    color: "from-white to-gray-300",
+    gradient: "from-white/10 to-gray-300/10",
     category: "Web Platform",
   },
   {
@@ -39,9 +42,9 @@ const projects = [
     liveUrl: "https://skill-shift-landing.vercel.app/",
     githubUrl: "https://github.com/SafalBhandari12/skillShift_landing",
     tech: ["React", "Vite", "Tailwind CSS", "Framer Motion"],
-    icon: "🎯",
-    color: "from-blue-500 to-cyan-600",
-    gradient: "from-blue-500/20 to-cyan-600/20",
+    icon: TrendingUp,
+    color: "from-gray-200 to-gray-400",
+    gradient: "from-gray-200/10 to-gray-400/10",
     category: "Landing Page",
   },
   {
@@ -51,9 +54,9 @@ const projects = [
     liveUrl: "https://english-learning-client.vercel.app/",
     githubUrl: "https://github.com/SafalBhandari12/englishLearningServer",
     tech: ["React", "Node.js", "Express", "MongoDB"],
-    icon: "📚",
-    color: "from-green-500 to-emerald-600",
-    gradient: "from-green-500/20 to-emerald-600/20",
+    icon: BookOpen,
+    color: "from-gray-300 to-gray-500",
+    gradient: "from-gray-300/10 to-gray-500/10",
     category: "Educational App",
   },
   {
@@ -63,9 +66,9 @@ const projects = [
     liveUrl: "https://landingdiversity.vercel.app/",
     githubUrl: "https://github.com/DeluluDevelopers/landingdiversity",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    icon: "🎨",
-    color: "from-violet-500 to-purple-600",
-    gradient: "from-violet-500/20 to-purple-600/20",
+    icon: Palette,
+    color: "from-gray-400 to-gray-600",
+    gradient: "from-gray-400/10 to-gray-600/10",
     category: "Landing Page",
   },
 ];
@@ -74,18 +77,18 @@ export default function PortfolioPage() {
   return (
     <main className='min-h-screen bg-black overflow-hidden'>
       <Navigation />
-      {/* Background Elements */}
+      {/* Background Elements - Monochrome */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-violet-500/30 rounded-full blur-3xl animate-pulse' />
-        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-violet-500/30 to-blue-500/30 rounded-full blur-3xl animate-pulse' />
-        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-blue-500/15 to-violet-500/15 rounded-full blur-3xl' />
+        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-white/10 to-gray-500/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-gray-500/10 to-white/10 rounded-full blur-3xl animate-pulse' />
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-white/5 to-gray-400/5 rounded-full blur-3xl' />
 
         {/* Animated grid pattern */}
-        <div className='absolute inset-0 opacity-20'>
+        <div className='absolute inset-0 opacity-10'>
           <div
             className='absolute inset-0'
             style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
               backgroundSize: "50px 50px",
             }}
           />
@@ -104,7 +107,7 @@ export default function PortfolioPage() {
             <Link href='/'>
               <Button
                 variant='ghost'
-                className='mr-4 text-gray-300 hover:text-blue-400 transition-colors'
+                className='mr-4 text-gray-300 hover:text-white transition-colors'
               >
                 <ArrowLeft className='w-4 h-4 mr-2' />
                 Back to Home
@@ -118,13 +121,13 @@ export default function PortfolioPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className='inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-6 border border-gray-700/50 backdrop-blur-sm'
           >
-            <Sparkles className='w-5 h-5 text-blue-400' />
+            <Sparkles className='w-5 h-5 text-white' />
             <span className='text-sm font-medium text-gray-300'>Portfolio</span>
           </motion.div>
 
           <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight'>
             Our{" "}
-            <span className='bg-gradient-to-r from-blue-400 via-violet-400 to-purple-400 bg-clip-text text-transparent animate-gradient'>
+            <span className='bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent animate-gradient'>
               Gen Z
             </span>{" "}
             Projects
@@ -172,7 +175,7 @@ export default function PortfolioPage() {
                       <div
                         className={`w-16 h-16 bg-gradient-to-r ${project.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                       >
-                        <span className='text-3xl'>{project.icon}</span>
+                        <project.icon className='w-8 h-8 text-black' />
                       </div>
                       <div className='text-right'>
                         <span className='text-xs text-gray-400 bg-gray-700/50 px-3 py-1 rounded-full'>
@@ -181,9 +184,7 @@ export default function PortfolioPage() {
                       </div>
                     </div>
 
-                    <h3
-                      className={`text-2xl font-bold text-white mb-3 bg-gradient-to-r ${project.color} bg-clip-text text-transparent`}
-                    >
+                    <h3 className='text-2xl font-bold text-white mb-3'>
                       {project.title}
                     </h3>
                     <p className='text-gray-300 leading-relaxed mb-6'>
@@ -212,7 +213,7 @@ export default function PortfolioPage() {
                       >
                         <Button
                           size='sm'
-                          className='w-full bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-xl transition-all duration-300'
+                          className='w-full bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black rounded-xl transition-all duration-300'
                         >
                           <Globe className='w-4 h-4 mr-2' />
                           Live Demo
@@ -227,7 +228,7 @@ export default function PortfolioPage() {
                         <Button
                           variant='outline'
                           size='sm'
-                          className='w-full border-gray-600 text-gray-300 hover:border-blue-500 hover:text-blue-400 rounded-xl transition-all duration-300 bg-transparent'
+                          className='w-full border-gray-600 text-gray-300 hover:border-white hover:text-white rounded-xl transition-all duration-300 bg-transparent'
                         >
                           <Github className='w-4 h-4 mr-2' />
                           Code
@@ -263,9 +264,9 @@ export default function PortfolioPage() {
                 title: "Mobile Apps",
                 description:
                   "Native and cross-platform mobile solutions that Gen Z can't put down. We build apps that users love to use and can't stop using.",
-                icon: "📱",
-                color: "from-violet-500 to-purple-600",
-                gradient: "from-violet-500/20 to-purple-600/20",
+                icon: Smartphone,
+                color: "from-white to-gray-300",
+                gradient: "from-white/10 to-gray-300/10",
                 features: [
                   "Cross-Platform",
                   "Native Performance",
@@ -276,9 +277,9 @@ export default function PortfolioPage() {
                 title: "Web Sites",
                 description:
                   "Modern, responsive websites that load fast and look stunning on every device. We create web experiences that convert visitors into customers.",
-                icon: "🌐",
-                color: "from-blue-500 to-cyan-600",
-                gradient: "from-blue-500/20 to-cyan-600/20",
+                icon: Globe,
+                color: "from-gray-200 to-gray-400",
+                gradient: "from-gray-200/10 to-gray-400/10",
                 features: [
                   "Responsive Design",
                   "SEO Optimized",
@@ -289,9 +290,9 @@ export default function PortfolioPage() {
                 title: "Custom Software",
                 description:
                   "Tailored solutions that solve your unique business challenges and scale with you. We build software that grows with your business.",
-                icon: "⚙️",
-                color: "from-green-500 to-emerald-600",
-                gradient: "from-green-500/20 to-emerald-600/20",
+                icon: Settings,
+                color: "from-gray-300 to-gray-500",
+                gradient: "from-gray-300/10 to-gray-500/10",
                 features: [
                   "Scalable Architecture",
                   "Cloud Native",
@@ -316,11 +317,9 @@ export default function PortfolioPage() {
                     <div
                       className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                     >
-                      <span className='text-3xl'>{category.icon}</span>
+                      <category.icon className='w-8 h-8 text-black' />
                     </div>
-                    <h3
-                      className={`text-xl font-bold text-white mb-3 bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}
-                    >
+                    <h3 className='text-xl font-bold text-white mb-3'>
                       {category.title}
                     </h3>
                     <p className='text-gray-300 leading-relaxed mb-6'>
@@ -334,7 +333,7 @@ export default function PortfolioPage() {
                           key={feature}
                           className='flex items-center space-x-2'
                         >
-                          <div className='w-1.5 h-1.5 bg-blue-400 rounded-full'></div>
+                          <div className='w-1.5 h-1.5 bg-white rounded-full'></div>
                           <span className='text-sm text-gray-300'>
                             {feature}
                           </span>

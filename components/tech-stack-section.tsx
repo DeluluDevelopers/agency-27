@@ -10,114 +10,121 @@ import {
   Smartphone,
   Globe,
   Zap,
-  Shield,
+  Code2,
+  Layers,
+  FileCode,
+  Server,
+  Cpu,
+  Box,
+  Link,
+  GitBranch,
 } from "lucide-react";
 
 const techCategories = [
   {
     name: "Frontend",
     icon: Globe,
-    color: "#61dafb",
+    color: "#ffffff",
     technologies: [
       {
         name: "React",
         description: "Modern component-based UI library",
-        icon: "⚛️",
+        icon: Code2,
       },
-      { name: "Next.js", description: "Full-stack React framework", icon: "▲" },
-      { name: "TypeScript", description: "Type-safe JavaScript", icon: "📘" },
+      { name: "Next.js", description: "Full-stack React framework", icon: Layers },
+      { name: "TypeScript", description: "Type-safe JavaScript", icon: FileCode },
       {
         name: "Tailwind CSS",
         description: "Utility-first CSS framework",
-        icon: "🎨",
+        icon: Layers,
       },
     ],
   },
   {
     name: "Backend",
     icon: Code,
-    color: "#68a063",
+    color: "#cccccc",
     technologies: [
       {
         name: "Node.js",
         description: "JavaScript runtime environment",
-        icon: "🟢",
+        icon: Server,
       },
       {
         name: "Spring Boot",
         description: "Java enterprise framework",
-        icon: "🍃",
+        icon: Layers,
       },
-      { name: "Express.js", description: "Minimal web framework", icon: "🚀" },
-      { name: "GraphQL", description: "Query language for APIs", icon: "🔗" },
+      { name: "Express.js", description: "Minimal web framework", icon: Zap },
+      { name: "GraphQL", description: "Query language for APIs", icon: Link },
     ],
   },
   {
     name: "Database",
     icon: Database,
-    color: "#4db33d",
+    color: "#aaaaaa",
     technologies: [
-      { name: "MongoDB", description: "NoSQL document database", icon: "🍃" },
+      { name: "MongoDB", description: "NoSQL document database", icon: Database },
       {
         name: "PostgreSQL",
         description: "Advanced relational database",
-        icon: "🐘",
+        icon: Database,
       },
       {
         name: "Redis",
         description: "In-memory data structure store",
-        icon: "🔴",
+        icon: Cpu,
       },
-      { name: "Prisma", description: "Next-generation ORM", icon: "⚡" },
+      { name: "Prisma", description: "Next-generation ORM", icon: Zap },
     ],
   },
   {
     name: "AI/ML",
     icon: Brain,
-    color: "#ff6f00",
+    color: "#999999",
     technologies: [
       {
         name: "TensorFlow",
         description: "Machine learning platform",
-        icon: "🧠",
+        icon: Brain,
       },
-      { name: "OpenAI API", description: "GPT integration", icon: "🤖" },
-      { name: "Python", description: "AI/ML programming language", icon: "🐍" },
+      { name: "OpenAI API", description: "GPT integration", icon: Cpu },
+      { name: "Python", description: "AI/ML programming language", icon: Code },
       {
         name: "Langchain",
         description: "LLM application framework",
-        icon: "🔗",
+        icon: Link,
       },
     ],
   },
   {
     name: "Mobile",
     icon: Smartphone,
-    color: "#a855f7",
+    color: "#888888",
     technologies: [
       {
         name: "React Native",
         description: "Cross-platform mobile apps",
-        icon: "📱",
+        icon: Smartphone,
       },
-      { name: "Flutter", description: "Google's UI toolkit", icon: "🦋" },
-      { name: "Swift", description: "iOS native development", icon: "🍎" },
-      { name: "Kotlin", description: "Android native development", icon: "🤖" },
+      { name: "Flutter", description: "Google's UI toolkit", icon: Layers },
+      { name: "Swift", description: "iOS native development", icon: Code2 },
+      { name: "Kotlin", description: "Android native development", icon: Code },
     ],
   },
   {
     name: "DevOps",
     icon: Cloud,
-    color: "#06b6d4",
+    color: "#777777",
     technologies: [
-      { name: "Docker", description: "Containerization platform", icon: "🐳" },
-      { name: "AWS", description: "Cloud computing services", icon: "☁️" },
+      { name: "Docker", description: "Containerization platform", icon: Box },
+      { name: "AWS", description: "Cloud computing services", icon: Cloud },
       {
         name: "Vercel",
         description: "Frontend deployment platform",
-        icon: "▲",
+        icon: Zap,
       },
-      { name: "GitHub Actions", description: "CI/CD automation", icon: "⚙️" },
+      { name: "GitHub Actions", description: "CI/CD automation", icon: GitBranch },
     ],
   },
 ];
@@ -129,7 +136,7 @@ export function TechStackSection() {
   return (
     <section
       id='tech'
-      className='py-20 bg-gradient-to-r from-blue-950 via-black to-violet-950'
+      className='py-20 bg-gradient-to-r from-[#0a0a0a] via-black to-[#1a1a1a]'
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <motion.div
@@ -141,7 +148,7 @@ export function TechStackSection() {
         >
           <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
             Our{" "}
-            <span className='bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent'>
               Tech Arsenal
             </span>
           </h2>
@@ -161,7 +168,7 @@ export function TechStackSection() {
               whileTap={{ scale: 0.95 }}
               className={`flex items-center space-x-3 px-6 py-4 rounded-2xl transition-all duration-300 ${
                 activeCategory === index
-                  ? "glass neon-blue text-white border border-blue-500/30"
+                  ? "glass neon-white text-white border border-white/30"
                   : "bg-gray-900/50 text-gray-400 hover:text-white hover:bg-gray-800/50 border border-gray-700/30"
               }`}
             >
@@ -173,7 +180,7 @@ export function TechStackSection() {
               {activeCategory === index && (
                 <motion.div
                   layoutId='activeIndicator'
-                  className='w-2 h-2 bg-blue-400 rounded-full'
+                  className='w-2 h-2 bg-white rounded-full'
                 />
               )}
             </motion.button>
@@ -188,53 +195,56 @@ export function TechStackSection() {
           transition={{ duration: 0.5 }}
           className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'
         >
-          {techCategories[activeCategory].technologies.map((tech, index) => (
-            <motion.div
-              key={tech.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              onHoverStart={() => setHoveredTech(index)}
-              onHoverEnd={() => setHoveredTech(null)}
-              className='glass rounded-3xl p-6 hover:neon-blue transition-all duration-300 group cursor-pointer border border-gray-800/50 hover:border-blue-500/30 relative overflow-hidden'
-            >
-              <div className='flex items-center justify-between mb-4'>
-                <div className='flex items-center space-x-3'>
-                  <span className='text-2xl'>{tech.icon}</span>
-                  <h3 className='text-lg font-bold text-white'>{tech.name}</h3>
-                </div>
-                <motion.div
-                  animate={{
-                    rotate: hoveredTech === index ? 360 : 0,
-                  }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                >
-                  <Zap className='w-5 h-5 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity' />
-                </motion.div>
-              </div>
-
-              <p className='text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed'>
-                {tech.description}
-              </p>
-
-              {/* Animated Background - Synchronized with Zap rotation */}
+          {techCategories[activeCategory].technologies.map((tech, index) => {
+            const TechIcon = tech.icon;
+            return (
               <motion.div
-                className='absolute inset-0 bg-gradient-to-r from-blue-500/5 to-violet-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300'
-                animate={{
-                  scale: hoveredTech === index ? [1, 1.08, 1] : 1,
-                }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeInOut",
-                  repeat: Number.POSITIVE_INFINITY,
-                }}
-              />
+                key={tech.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                onHoverStart={() => setHoveredTech(index)}
+                onHoverEnd={() => setHoveredTech(null)}
+                className='glass rounded-3xl p-6 hover:neon-white transition-all duration-300 group cursor-pointer border border-gray-800/50 hover:border-white/30 relative overflow-hidden'
+              >
+                <div className='flex items-center justify-between mb-4'>
+                  <div className='flex items-center space-x-3'>
+                    <TechIcon className='w-6 h-6 text-white' />
+                    <h3 className='text-lg font-bold text-white'>{tech.name}</h3>
+                  </div>
+                  <motion.div
+                    animate={{
+                      rotate: hoveredTech === index ? 360 : 0,
+                    }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                  >
+                    <Zap className='w-5 h-5 text-white opacity-0 group-hover:opacity-100 transition-opacity' />
+                  </motion.div>
+                </div>
 
-              {/* Corner Accent */}
-              <div className='absolute top-3 right-3 w-2 h-2 bg-gradient-to-r from-blue-400 to-violet-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
-            </motion.div>
-          ))}
+                <p className='text-sm text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed'>
+                  {tech.description}
+                </p>
+
+                {/* Animated Background */}
+                <motion.div
+                  className='absolute inset-0 bg-gradient-to-r from-white/5 to-gray-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+                  animate={{
+                    scale: hoveredTech === index ? [1, 1.08, 1] : 1,
+                  }}
+                  transition={{
+                    duration: 0.6,
+                    ease: "easeInOut",
+                    repeat: hoveredTech === index ? Infinity : 0,
+                  }}
+                />
+
+                {/* Corner Accent */}
+                <div className='absolute top-3 right-3 w-2 h-2 bg-gradient-to-r from-white to-gray-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>

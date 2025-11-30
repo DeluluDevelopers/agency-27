@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { Search, Lightbulb, Code, Rocket, Play, Pause } from "lucide-react";
+import { motion } from "framer-motion";
+import { Search, Lightbulb, Code, Rocket } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const processSteps = [
@@ -11,8 +11,8 @@ const processSteps = [
     description:
       "We dive deep into your business needs, target audience, and technical requirements. We analyze your market, competitors, and create a comprehensive roadmap for your project.",
     duration: "1-2 days",
-    color: "from-blue-500 to-cyan-500",
-    gradient: "from-blue-500/20 to-cyan-500/20",
+    color: "from-white to-gray-300",
+    gradient: "from-white/10 to-gray-300/10",
   },
   {
     icon: Lightbulb,
@@ -20,8 +20,8 @@ const processSteps = [
     description:
       "Rapid prototyping with interactive mockups and technical architecture planning. We create clickable prototypes and define the perfect tech stack for your project.",
     duration: "3-5 days",
-    color: "from-violet-500 to-purple-500",
-    gradient: "from-violet-500/20 to-purple-500/20",
+    color: "from-gray-200 to-gray-400",
+    gradient: "from-gray-200/10 to-gray-400/10",
   },
   {
     icon: Code,
@@ -29,8 +29,8 @@ const processSteps = [
     description:
       "Agile development with daily updates and continuous integration. We build your app using modern technologies with regular demos and feedback loops.",
     duration: "1-3 weeks",
-    color: "from-pink-500 to-rose-500",
-    gradient: "from-pink-500/20 to-rose-500/20",
+    color: "from-gray-300 to-gray-500",
+    gradient: "from-gray-300/10 to-gray-500/10",
   },
   {
     icon: Rocket,
@@ -38,8 +38,8 @@ const processSteps = [
     description:
       "Deployment, testing, and launch with ongoing support and monitoring. We ensure your app is production-ready and provide post-launch maintenance.",
     duration: "2-3 days",
-    color: "from-green-500 to-emerald-500",
-    gradient: "from-green-500/20 to-emerald-500/20",
+    color: "from-gray-400 to-gray-600",
+    gradient: "from-gray-400/10 to-gray-600/10",
   },
 ];
 
@@ -54,7 +54,7 @@ function ProcessSection() {
 
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % processSteps.length);
-    }, 4000); // Increased from 3000 to 4000 for more comfortable reading time
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, isHovered]);
@@ -64,7 +64,7 @@ function ProcessSection() {
   return (
     <section
       id='process'
-      className='bg-gradient-to-br from-gray-800 via-gray-900 to-blue-950 h-screen flex items-center'
+      className='bg-gradient-to-br from-[#0a0a0a] via-black to-[#1a1a1a] h-screen flex items-center'
     >
       <div className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <motion.div
@@ -100,9 +100,9 @@ function ProcessSection() {
                 >
                   {/* Progress Line */}
                   {index < processSteps.length - 1 && (
-                    <div className='absolute top-5 left-1/2 w-full h-0.5 bg-gray-700'>
+                    <div className='absolute top-5 left-1/2 w-full h-0.5 bg-gray-800'>
                       <motion.div
-                        className='h-full bg-gradient-to-r from-blue-500 to-violet-500'
+                        className='h-full bg-gradient-to-r from-white to-gray-400'
                         initial={{ width: 0 }}
                         animate={{ width: isActive ? "100%" : "0%" }}
                         transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -115,13 +115,13 @@ function ProcessSection() {
                     whileTap={{ scale: 0.95 }}
                     className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 border-2 ${
                       isActive
-                        ? `bg-gradient-to-r ${step.color} border-white shadow-lg shadow-blue-500/25`
-                        : "bg-gray-800 border-gray-600 hover:border-gray-500"
-                    } text-white relative z-10`}
+                        ? `bg-gradient-to-r ${step.color} border-white shadow-lg shadow-white/25`
+                        : "bg-gray-900 border-gray-700 hover:border-gray-600"
+                    } relative z-10`}
                   >
                     <StepIcon
                       className={`w-5 h-5 transition-all duration-300 ${
-                        isActive ? "text-white" : "text-gray-400"
+                        isActive ? "text-black" : "text-gray-500"
                       }`}
                     />
                   </motion.div>
@@ -129,12 +129,12 @@ function ProcessSection() {
                   <div className='text-center mt-2'>
                     <div
                       className={`font-semibold transition-all duration-300 text-xs ${
-                        isActive ? "text-white" : "text-gray-400"
+                        isActive ? "text-white" : "text-gray-500"
                       }`}
                     >
                       {step.title}
                     </div>
-                    <div className='text-xs text-gray-500 mt-1 transition-all duration-300'>
+                    <div className='text-xs text-gray-600 mt-1 transition-all duration-300'>
                       {step.duration}
                     </div>
                   </div>
@@ -163,12 +163,12 @@ function ProcessSection() {
                       className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 border-2 ${
                         isActive
                           ? `bg-gradient-to-r ${step.color} border-white shadow-lg`
-                          : "bg-gray-800 border-gray-600 hover:border-gray-500"
-                      } text-white`}
+                          : "bg-gray-900 border-gray-700 hover:border-gray-600"
+                      }`}
                     >
                       <StepIcon
                         className={`w-4 h-4 transition-all duration-300 ${
-                          isActive ? "text-white" : "text-gray-400"
+                          isActive ? "text-black" : "text-gray-500"
                         }`}
                       />
                     </motion.div>
@@ -176,12 +176,12 @@ function ProcessSection() {
                     <div className='text-center mt-1'>
                       <div
                         className={`font-semibold transition-all duration-300 text-xs ${
-                          isActive ? "text-white" : "text-gray-400"
+                          isActive ? "text-white" : "text-gray-500"
                         }`}
                       >
                         {step.title}
                       </div>
-                      <div className='text-xs text-gray-500 mt-1 transition-all duration-300'>
+                      <div className='text-xs text-gray-600 mt-1 transition-all duration-300'>
                         {step.duration}
                       </div>
                     </div>
@@ -200,7 +200,7 @@ function ProcessSection() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className='mt-8'
         >
-          <div className='relative bg-gray-800/30 backdrop-blur-sm rounded-xl p-4 xs:p-6 border border-gray-700/50 max-w-3xl mx-auto overflow-hidden'>
+          <div className='relative bg-gray-900/30 backdrop-blur-sm rounded-xl p-4 xs:p-6 border border-gray-800/50 max-w-3xl mx-auto overflow-hidden'>
             {/* Background Gradient */}
             <div
               className={`absolute inset-0 bg-gradient-to-br ${processSteps[activeStep].gradient} opacity-20 transition-all duration-500`}
@@ -212,9 +212,9 @@ function ProcessSection() {
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-                className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${processSteps[activeStep].color} text-white mb-4 shadow-lg`}
+                className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${processSteps[activeStep].color} mb-4 shadow-lg`}
               >
-                <ActiveIcon className='w-6 h-6' />
+                <ActiveIcon className='w-6 h-6 text-black' />
               </motion.div>
 
               <h3 className='text-lg font-bold text-white mb-3 transition-all duration-300'>
@@ -231,13 +231,13 @@ function ProcessSection() {
                       key={index}
                       className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
                         index === activeStep
-                          ? "bg-blue-400 scale-125"
-                          : "bg-gray-600"
+                          ? "bg-white scale-125"
+                          : "bg-gray-700"
                       }`}
                     />
                   ))}
                 </div>
-                <span className='text-xs text-gray-400 ml-2 transition-all duration-300'>
+                <span className='text-xs text-gray-500 ml-2 transition-all duration-300'>
                   {activeStep + 1} of {processSteps.length}
                 </span>
               </div>
