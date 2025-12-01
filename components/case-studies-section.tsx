@@ -18,7 +18,7 @@ const caseStudies = [
     ],
     image: "/fintech-dashboard.png",
     tech: ["React", "Spring Boot", "MongoDB", "TensorFlow"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-white to-gray-300",
   },
   {
     title: "E-Commerce Mobile App",
@@ -31,7 +31,7 @@ const caseStudies = [
     ],
     image: "/mobile-ar-ecommerce.png",
     tech: ["React Native", "Node.js", "PostgreSQL", "AR Kit"],
-    color: "from-violet-500 to-purple-500",
+    color: "from-gray-200 to-gray-400",
   },
   {
     title: "AI Chatbot Platform",
@@ -44,7 +44,7 @@ const caseStudies = [
     ],
     image: "/ai-chatbot-interface.png",
     tech: ["Next.js", "Python", "OpenAI", "Redis"],
-    color: "from-pink-500 to-rose-500",
+    color: "from-gray-300 to-gray-500",
   },
 ];
 
@@ -63,7 +63,7 @@ export function CaseStudiesSection() {
         >
           <h2 className='text-2xl xs:text-4xl md:text-5xl font-bold text-white mb-4 heading-accent'>
             Success{" "}
-            <span className='bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent'>
               Stories
             </span>
           </h2>
@@ -73,7 +73,7 @@ export function CaseStudiesSection() {
           </p>
           <div className='mt-6'>
             <a href='/portfolio'>
-              <Button className='bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-600 hover:to-violet-700 text-white rounded-2xl px-6 py-3 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300'>
+              <Button className='bg-gradient-to-r from-white to-gray-300 hover:from-gray-200 hover:to-gray-400 text-black rounded-2xl px-6 py-3 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300'>
                 View All Projects
                 <ArrowRight className='w-5 h-5 ml-2' />
               </Button>
@@ -83,14 +83,14 @@ export function CaseStudiesSection() {
 
         {/* Case Study Tabs */}
         <div className='flex justify-center mb-8 xs:mb-12'>
-          <div className='flex space-x-2 glass rounded-2xl p-2 shadow-lg border border-gray-800/50 overflow-x-auto scrollbar-thin scrollbar-thumb-blue-400 scrollbar-track-transparent max-w-full'>
+          <div className='flex space-x-2 glass rounded-2xl p-2 shadow-lg border border-gray-800/50 overflow-x-auto scrollbar-thin scrollbar-thumb-white scrollbar-track-transparent max-w-full'>
             {caseStudies.map((study, index) => (
               <button
                 key={study.title}
                 onClick={() => setActiveCase(index)}
                 className={`px-4 xs:px-6 py-2 xs:py-3 rounded-xl font-semibold transition-all duration-300 whitespace-nowrap ${
                   activeCase === index
-                    ? `bg-gradient-to-r ${study.color} text-white shadow-lg neon-blue`
+                    ? `bg-gradient-to-r ${study.color} text-black shadow-lg neon-white`
                     : "text-gray-400 hover:text-white"
                 }`}
               >
@@ -151,7 +151,7 @@ export function CaseStudiesSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className='flex-1 min-w-[120px] max-w-[180px] text-center p-3 xs:p-4 glass rounded-2xl border border-gray-800/50'
                 >
-                  <metric.icon className='w-5 xs:w-6 h-5 xs:h-6 mx-auto mb-1 xs:mb-2 text-blue-400' />
+                  <metric.icon className='w-5 xs:w-6 h-5 xs:h-6 mx-auto mb-1 xs:mb-2 text-white' />
                   <div className='font-bold text-white text-base xs:text-lg'>
                     {metric.value}
                   </div>
@@ -178,13 +178,6 @@ export function CaseStudiesSection() {
                 ))}
               </div>
             </div>
-
-            {/* <Button
-              className={`w-full xs:w-auto bg-gradient-to-r ${caseStudies[activeCase].color} hover:shadow-lg text-white rounded-2xl px-4 xs:px-6 py-2 xs:py-3 font-semibold group neon-blue`}
-            >
-              View Full Case Study
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button> */}
           </div>
         </motion.div>
       </div>

@@ -31,7 +31,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-12 xs:py-20 bg-gray-900">
+    <section className="py-12 xs:py-20 bg-[#0a0a0a]">
       <div className="w-full max-w-7xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -58,12 +58,12 @@ export function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.15 }}
             >
-              <Card className="rounded-3xl glass border border-gray-800/50 shadow-xl h-full flex flex-col p-4 xs:p-6">
-                <CardHeader className="flex flex-col items-center gap-2 bg-gradient-to-r from-blue-500/10 to-violet-500/10 rounded-t-3xl p-2 xs:p-4">
-                  <Quote className="w-7 xs:w-8 h-7 xs:h-8 text-blue-400 mb-2 opacity-60" />
+              <Card className="rounded-3xl glass border border-gray-800/50 shadow-xl h-full flex flex-col p-4 xs:p-6 hover:border-white/20 transition-all duration-300">
+                <CardHeader className="flex flex-col items-center gap-2 bg-gradient-to-r from-white/5 to-gray-500/5 rounded-t-3xl p-2 xs:p-4">
+                  <Quote className="w-7 xs:w-8 h-7 xs:h-8 text-white mb-2 opacity-60" />
                   <div className="flex mb-2">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 xs:w-5 h-4 xs:h-5 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="w-4 xs:w-5 h-4 xs:h-5 fill-white text-white" />
                     ))}
                   </div>
                 </CardHeader>
@@ -94,19 +94,19 @@ export function TestimonialsSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 xs:gap-8 mt-8 xs:mt-16"
         >
-          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50">
+          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50 hover:border-white/20 transition-all duration-300">
             <div className="text-2xl xs:text-3xl font-bold text-white mb-1 xs:mb-2">98%</div>
             <div className="text-gray-400 text-xs xs:text-base">Client Satisfaction</div>
           </div>
-          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50">
+          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50 hover:border-white/20 transition-all duration-300">
             <div className="text-2xl xs:text-3xl font-bold text-white mb-1 xs:mb-2">50+</div>
             <div className="text-gray-400 text-xs xs:text-base">Projects Delivered</div>
           </div>
-          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50">
+          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50 hover:border-white/20 transition-all duration-300">
             <div className="text-2xl xs:text-3xl font-bold text-white mb-1 xs:mb-2">2-4</div>
             <div className="text-gray-400 text-xs xs:text-base">Week Average</div>
           </div>
-          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50">
+          <div className="text-center glass rounded-2xl p-4 xs:p-6 border border-gray-800/50 hover:border-white/20 transition-all duration-300">
             <div className="text-2xl xs:text-3xl font-bold text-white mb-1 xs:mb-2">24/7</div>
             <div className="text-gray-400 text-xs xs:text-base">Support</div>
           </div>
